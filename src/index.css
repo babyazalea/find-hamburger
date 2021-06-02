@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
 
+:root {
+  --main-yellow: #fabc2a;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -15,6 +19,16 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
 }
 
 code {

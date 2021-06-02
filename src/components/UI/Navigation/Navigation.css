@@ -1,0 +1,31 @@
+nav {
+  background-color: var(--main-yellow);
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1;
+  grid-template-columns: 0.5fr 3fr 2fr;
+}
+
+.menus ul {
+  display: flex;
+}
+
+.menus ul li:not(:last-child) {
+  margin-right: 15px;
+}
+
+.user__navs {
+  justify-self: flex-end;
+}
+
+.user__navs ul {
+  display: flex;
+}
+
+.user__navs ul li:not(:last-child) {
+  margin-right: 15px;
+}
+
+.user__navs ul li:last-child {
+  margin-right: 30px;
+}
