@@ -1,0 +1,25 @@
+const initialIngredients = {
+  lidBun: 0,
+  lettuce: 0,
+  pickle: 0,
+  onion: 0,
+  tomato: 0,
+  spicySauce: 0,
+  bicmacSauce: 0,
+  teriyakiSauce: 0,
+  ketchupSauce: 0,
+  mayoSauce: 0,
+  extraBread: 0,
+  hashBrown: 0,
+  cheese: 0,
+  chickenPatty: 0,
+  hamburgPatty: 0,
+  porkPatty: 0,
+  beefPatty: 0,
+  shrimpPatty: 0,
+  vegetablePatty: 0,
+  bottomBun: 0,
+  realBurger: null,
+};
+
+export default initialIngredients;
