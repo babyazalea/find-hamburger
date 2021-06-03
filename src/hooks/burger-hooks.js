@@ -5,7 +5,7 @@ import initialIngredients from "../assets/data/initial-ingredients";
 import { convertingText } from "../utils/converting-text";
 
 export const useBurger = () => {
-  const [ings, setIngs] = useState({
+  const [ingredients, setIngredients] = useState({
     ...initialIngredients,
     lidBun: 1,
     bottomBun: 1,
@@ -15,7 +15,7 @@ export const useBurger = () => {
 
   const addIngredient = (event, text) => {
     event.preventDefault();
-    const oldIngredients = ings;
+    const oldIngredients = ingredients;
     const convertedTextArg = text.replace(/\s/g, "");
 
     const convertedText = convertingText(convertedTextArg);
@@ -27,14 +27,14 @@ export const useBurger = () => {
       updatedIngredientCount = 1;
     }
     const updatedIngredients = {
-      ...ings,
+      ...ingredients,
     };
     updatedIngredients[convertedText] = updatedIngredientCount;
-    setIngs(updatedIngredients);
+    setIngredients(updatedIngredients);
   };
 
   const clearIngredients = () => {
-    setIngs({
+    setIngredients({
       ...initialIngredients,
       lidBun: 1,
       bottomBun: 1,
@@ -47,7 +47,7 @@ export const useBurger = () => {
 
   const initBurgerAnalyze = () => {
     setStateOfAnalyze(false);
-    setIngs({
+    setIngredients({
       ...initialIngredients,
       lidBun: 1,
       bottomBun: 1,
@@ -55,7 +55,7 @@ export const useBurger = () => {
   };
 
   return {
-    ings,
+    ingredients,
     isAnalyzed,
     addIngredient,
     clearIngredients,

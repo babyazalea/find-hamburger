@@ -2,6 +2,10 @@
   align-self: center;
 }
 
+.burger__controller form {
+  display: inline;
+}
+
 .ingredient-input__delete-button {
   margin-right: 10px;
 }
