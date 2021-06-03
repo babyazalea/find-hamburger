@@ -36,6 +36,15 @@ code {
     monospace;
 }
 
-#App {
-  position: relative;
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+main > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
