@@ -7,8 +7,7 @@ const User = () => {
   const { path, url } = useRouteMatch();
 
   return (
-    <div>
-      <hr />
+    <div className="find-hamburger__user">
       <ul>
         <li>
           <Link to={`${url}/u1`}>user1</Link>

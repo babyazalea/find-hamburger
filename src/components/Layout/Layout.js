@@ -4,7 +4,7 @@ import Navigation from "../UI/Navigation/Navigation";
 
 const Layout = (props) => {
   return (
-    <div>
+    <div className="find-hamburger__layout">
       <header>
         <Navigation />
       </header>
