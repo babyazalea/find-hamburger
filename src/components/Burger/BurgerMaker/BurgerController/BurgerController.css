@@ -1,0 +1,20 @@
+.burger__controller {
+  align-self: center;
+}
+
+.ingredient-input__delete-button {
+  margin-right: 10px;
+}
+.ingredient-input__submit-button {
+  margin-left: 10px;
+}
+
+.burger__controller-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.burger__controller-buttons button:not(:last-child) {
+  margin-right: 15px;
+}

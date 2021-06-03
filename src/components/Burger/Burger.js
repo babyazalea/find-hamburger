@@ -7,7 +7,7 @@ const Burger = () => {
   const { path } = useRouteMatch();
 
   return (
-    <div>
+    <div className="find-hamburger__burger">
       <Switch>
         <Route path={path} exact>
           <BurgerMaker />
