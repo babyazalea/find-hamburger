@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import initialIngredients from "../assets/data/initial-ingredients";
 
 import { convertingText } from "../utils/converting-text";
 
 export const useBurger = () => {
+  const history = useHistory();
+
   const [ingredients, setIngredients] = useState({
     ...initialIngredients,
     lidBun: 1,
@@ -43,6 +46,7 @@ export const useBurger = () => {
 
   const fixedIngredients = () => {
     setStateOfAnalyze(true);
+    history.push("/burger-maker/analyzed");
   };
 
   const initBurgerAnalyze = () => {

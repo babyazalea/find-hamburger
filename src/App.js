@@ -54,7 +54,7 @@ let routes = (
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App" id="App">
       <Router>
         <Layout>{routes}</Layout>
       </Router>

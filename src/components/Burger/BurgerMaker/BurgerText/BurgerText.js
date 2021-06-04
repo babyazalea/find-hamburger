@@ -13,7 +13,7 @@ const BurgerText = (props) => {
     });
   });
 
-  return <div>{transformedIngredients}</div>;
+  return <div className="burger__text">{transformedIngredients}</div>;
 };
 
 export default BurgerText;
