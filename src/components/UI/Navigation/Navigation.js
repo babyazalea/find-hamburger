@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../../context/auth-context";
 
+import { icons } from "../../../assets/icons/icons";
 import "./Navigation.css";
 
 const Navigation = (props) => {
@@ -28,8 +29,14 @@ const Navigation = (props) => {
           {authContext.isLoggedIn ? (
             <React.Fragment>
               <li>
-                <Link to="/users">
+                <Link to={`/users/${props.userId}`}>
                   <div className="user-name__display">
+                    {/* {props.photoUrl !== null ? (
+                      <img src={props.photoUrl} alt="유저 사진" />
+                    ) : (
+                      icons("user-circle")
+                    )} */}
+                    {icons("user-circle")}
                     {props.userName !== "" ? (
                       <span>{props.userName}</span>
                     ) : (
