@@ -13,7 +13,7 @@ import User from "./components/User/User";
 
 const App = () => {
   const {
-    token,
+    idToken,
     userName,
     userEmail,
     photoUrl,
@@ -48,7 +48,7 @@ const App = () => {
       <Route path="/credits" exact>
         <Credits />
       </Route>
-      <Route path="/users">
+      <Route path="/users/:userId">
         {/* <UserProfile
                     token={token}
                     userId={userId}
@@ -57,7 +57,13 @@ const App = () => {
                     photoUrl={photoUrl}
                     updateProfile={updateProfile}
                   /> */}
-        <User />
+        <User
+          idToken={idToken}
+          userName={userName}
+          userEmail={userEmail}
+          photoUrl={photoUrl}
+          updateProfile={updateProfile}
+        />
       </Route>
       <Route path="/auth">
         <Auth login={login} googleLogin={googleLogin} />
@@ -74,7 +80,12 @@ const App = () => {
       <AuthContext.Provider
         value={{ isLoggedIn: isLoggedIn, isVerified: isVerified }}
       >
-        <Layout userName={userName} logout={logout}>
+        <Layout
+          userName={userName}
+          userId={userId}
+          photoUrl={photoUrl}
+          logout={logout}
+        >
           {routes}
         </Layout>
       </AuthContext.Provider>
