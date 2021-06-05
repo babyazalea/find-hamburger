@@ -45,7 +45,7 @@ const ResetPassword = (props) => {
   };
 
   let passwordResetPart;
-  if (props.notLoggedIn) {
+  if (props.notLoggedIn === true) {
     passwordResetPart = (
       <React.Fragment>
         <input
