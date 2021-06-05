@@ -1,25 +1,30 @@
 import React from "react";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import UserProfile from "./UserProfile/UserProfile";
+import UserBurgers from "./UserBurgers/UserBurgers";
+import ResetPassword from "../Auth/ResetPassword/ResetPassword";
 
-const User = () => {
-  const { path, url } = useRouteMatch();
+const User = (props) => {
+  const { path } = useRouteMatch();
 
   return (
     <div className="find-hamburger__user">
-      <ul>
-        <li>
-          <Link to={`${url}/u1`}>user1</Link>
-        </li>
-      </ul>
-
       <Switch>
         <Route exact path={path}>
-          User
+          <UserProfile
+            userEmail={props.userEmail}
+            userName={props.userName}
+            photoUrl={props.photoUrl}
+            idToken={props.idToken}
+            updateProfile={props.updateProfile}
+          />
         </Route>
-        <Route path={`${path}/:userId`}>
-          <UserProfile />
+        <Route path={`${path}/user-burgers`}>
+          <UserBurgers />
+        </Route>
+        <Route path={`${path}/reset-password`}>
+          <ResetPassword notLoggedIn={false} />
         </Route>
       </Switch>
     </div>
