@@ -2,6 +2,7 @@
 
 :root {
   --main-yellow: #fabc2a;
+  --main-white: #f2edeb;
 }
 
 html {
@@ -36,6 +37,10 @@ a {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#App {
+  position: relative;
 }
 
 main {

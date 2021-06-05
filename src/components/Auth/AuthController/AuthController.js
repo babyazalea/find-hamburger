@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 import { useHttp } from "../../../hooks/http-hook";
 
-import Spinner from "../../UI/Spinner/Spinner";
+import LoadingDots from "../../UI/LoadingDots/LoadingDots";
+import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
 const AuthController = (props) => {
   const [email, setEmail] = useState("");
@@ -51,15 +52,15 @@ const AuthController = (props) => {
     }
   };
 
-  // const confirmError = () => {
-  //   initializeError();
-  // };
+  const confirmError = () => {
+    initializeError();
+  };
 
   return (
     <React.Fragment>
-      <div className="auth__wrapper">
+      <div className="auth-controller__wrapper">
         {isLoading ? (
-          <Spinner />
+          <LoadingDots />
         ) : (
           <React.Fragment>
             <form>
@@ -95,7 +96,7 @@ const AuthController = (props) => {
           </React.Fragment>
         )}
       </div>
-      {/* <Modal error={error} close={confirmError} /> */}
+      <ErrorModal error={error} close={confirmError} />
     </React.Fragment>
   );
 };

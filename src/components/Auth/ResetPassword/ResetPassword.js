@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import { useHttp } from "../../../hooks/http-hook";
 
-import Spinner from "../../UI/Spinner/Spinner";
+import LoadingDots from "../../UI/LoadingDots/LoadingDots";
 
 const ResetPassword = (props) => {
   const [userEmail, setUserEmail] = useState(null);
@@ -70,7 +70,7 @@ const ResetPassword = (props) => {
   return (
     <div className="password__reset">
       {isLoading ? (
-        <Spinner />
+        <LoadingDots />
       ) : (
         <div className="reset-password__wrapper">
           {sendedResetPassword ? (

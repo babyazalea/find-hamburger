@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useHttp } from "../../../hooks/http-hook";
 
-import Spinner from "../../UI/Spinner/Spinner";
+import LoadingDots from "../../UI/LoadingDots/LoadingDots";
+import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
 const GoogleLogin = (props) => {
   const [accessToken, setAccessToken] = useState(null);
@@ -40,19 +41,28 @@ const GoogleLogin = (props) => {
     }
   };
 
+  const confirmError = () => {
+    initializeError();
+  };
+
   return (
-    <div className="google__login">
-      {tokenLoading || isLoading ? (
-        <Spinner />
-      ) : (
-        <React.Fragment>
-          <button onClick={loginWithGoogleInFirebase}>google login 하기</button>
-          <Link to="/auth">
-            <button>돌아가기</button>
-          </Link>
-        </React.Fragment>
-      )}
-    </div>
+    <React.Fragment>
+      <div className="google__login">
+        {tokenLoading || isLoading ? (
+          <LoadingDots />
+        ) : (
+          <React.Fragment>
+            <button onClick={loginWithGoogleInFirebase}>
+              google login 하기
+            </button>
+            <Link to="/auth">
+              <button>돌아가기</button>
+            </Link>
+          </React.Fragment>
+        )}
+      </div>
+      <ErrorModal error={error} close={confirmError} />
+    </React.Fragment>
   );
 };
 

@@ -3,6 +3,9 @@ import { useHistory } from "react-router-dom";
 
 import { useHttp } from "../../../hooks/http-hook";
 
+import LoadingDots from "../../UI/LoadingDots/LoadingDots";
+import ErrorModal from "../../UI/ErrorModal/ErrorModal";
+
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -52,7 +55,9 @@ const Signup = () => {
       try {
         const response = await sendRequest(url, signupData);
         console.log(response);
-        history.push("/");
+        if (response.status === 200) {
+          history.push("/");
+        }
       } catch (err) {
         console.log(err);
       }
@@ -65,35 +70,42 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup">
-      <form>
-        <div className="signup__input-group">
-          <input
-            type="email"
-            placeholder="이메일"
-            name="email"
-            onChange={(e) => onChange(e)}
-          />
-          <input
-            type="password"
-            placeholder="비밀번호"
-            name="password"
-            onChange={(e) => onChange(e)}
-          />
-          <input
-            type="password"
-            placeholder="비밀번호 확인"
-            name="confirm-password"
-            onChange={(e) => onChange(e)}
-          />
-        </div>
-        <div className="auth__submit-controll">
-          <button onClick={onSignup} disabled={passwordError}>
-            가입
-          </button>
-        </div>
-      </form>
-    </div>
+    <React.Fragment>
+      <div className="signup">
+        {isLoading ? (
+          <LoadingDots />
+        ) : (
+          <form>
+            <div className="signup__input-group">
+              <input
+                type="email"
+                placeholder="이메일"
+                name="email"
+                onChange={(e) => onChange(e)}
+              />
+              <input
+                type="password"
+                placeholder="비밀번호"
+                name="password"
+                onChange={(e) => onChange(e)}
+              />
+              <input
+                type="password"
+                placeholder="비밀번호 확인"
+                name="confirm-password"
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+            <div className="auth__submit-controll">
+              <button onClick={onSignup} disabled={passwordError}>
+                가입
+              </button>
+            </div>
+          </form>
+        )}
+      </div>
+      <ErrorModal error={error} close={confirmError} />
+    </React.Fragment>
   );
 };
 
