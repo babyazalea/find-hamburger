@@ -6,7 +6,7 @@ const Layout = (props) => {
   return (
     <div className="find-hamburger__layout" id="layout">
       <header>
-        <Navigation />
+        <Navigation userName={props.userName} logout={props.logout} />
       </header>
       <main>{props.children}</main>
     </div>

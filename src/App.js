@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
+import { AuthContext } from "./context/auth-context";
 import { useAuth } from "./hooks/auth-hook";
 
 import Home from "./components/Home/Home";
@@ -70,7 +71,13 @@ const App = () => {
 
   return (
     <div className="App" id="App">
-      <Layout userName={userName}>{routes}</Layout>
+      <AuthContext.Provider
+        value={{ isLoggedIn: isLoggedIn, isVerified: isVerified }}
+      >
+        <Layout userName={userName} logout={logout}>
+          {routes}
+        </Layout>
+      </AuthContext.Provider>
     </div>
   );
 };

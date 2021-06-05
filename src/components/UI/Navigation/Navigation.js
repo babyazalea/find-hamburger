@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import { AuthContext } from "../../../context/auth-context";
 
 import "./Navigation.css";
 
-const Navigation = () => {
+const Navigation = (props) => {
+  const authContext = useContext(AuthContext);
+
   return (
     <nav>
       <div className="doorknob">
@@ -21,12 +25,32 @@ const Navigation = () => {
       </div>
       <div className="user__navs">
         <ul>
-          <li>
-            <Link to="/users">유저</Link>
-          </li>
-          <li>
-            <Link to="/auth">로그인 / 가입</Link>
-          </li>
+          {authContext.isLoggedIn ? (
+            <React.Fragment>
+              <li>
+                <Link to="/users">
+                  <div className="user-name__display">
+                    {props.userName !== "" ? (
+                      <span>{props.userName}</span>
+                    ) : (
+                      <span>이름 없음</span>
+                    )}
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <div>
+                  <button className="logout__btn" onClick={props.logout}>
+                    로그아웃
+                  </button>
+                </div>
+              </li>
+            </React.Fragment>
+          ) : (
+            <li>
+              <Link to="/auth">로그인 / 가입</Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
