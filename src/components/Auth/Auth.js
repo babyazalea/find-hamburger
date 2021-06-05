@@ -13,13 +13,13 @@ const Auth = (props) => {
     <div className="find-hamburger__auth">
       <Switch>
         <Route path={path} exact>
-          <AuthController />
+          <AuthController login={props.login} />
         </Route>
         <Route path={`${path}/signup`} exact>
           <Signup />
         </Route>
         <Route path={`${path}/reset-password`} exact>
-          <ResetPassword />
+          <ResetPassword notLoggedIn />
         </Route>
         <Route path={`${path}/google-login`}>
           <GoogleLogin googleLogin={props.googleLogin} />
