@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { storingData } from "../utils/storing-data";
 
 export const useAuth = () => {
-  const [token, setToken] = useState(null);
+  const [idToken, setIdToken] = useState(null);
   const [userName, setUserName] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
   const [photoUrl, setPhotoUrl] = useState(null);
@@ -18,7 +18,7 @@ export const useAuth = () => {
     loginData.emailVerified = userData["emailVerified"];
     storingData(loginData);
 
-    setToken(loginData["idToken"]);
+    setIdToken(loginData["idToken"]);
     setUserName(loginData["displayName"]);
     setUserEmail(loginData["email"]);
     setPhotoUrl(loginData["photoUrl"]);
@@ -32,7 +32,7 @@ export const useAuth = () => {
   const googleLogin = (responseData) => {
     storingData(responseData);
 
-    setToken(responseData["idToken"]);
+    setIdToken(responseData["idToken"]);
     setUserName(responseData["displayName"]);
     setUserEmail(responseData["email"]);
     setPhotoUrl(responseData["photoUrl"]);
@@ -81,7 +81,7 @@ export const useAuth = () => {
   // }, [logout]);
 
   return {
-    token,
+    idToken,
     userName,
     userEmail,
     userId,
