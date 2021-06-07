@@ -36,20 +36,12 @@ export const useBurger = () => {
     setIngredients(updatedIngredients);
   };
 
-  const clearIngredients = () => {
-    setIngredients({
-      ...initialIngredients,
-      lidBun: 1,
-      bottomBun: 1,
-    });
-  };
-
   const fixedIngredients = () => {
     setStateOfAnalyze(true);
     history.push("/burger-maker/analyzed");
   };
 
-  const initBurgerAnalyze = () => {
+  const initBurger = () => {
     setStateOfAnalyze(false);
     setIngredients({
       ...initialIngredients,
@@ -62,8 +54,7 @@ export const useBurger = () => {
     ingredients,
     isAnalyzed,
     addIngredient,
-    clearIngredients,
     fixedIngredients,
-    initBurgerAnalyze,
+    initBurger,
   };
 };
