@@ -59,26 +59,27 @@ export const useAuth = () => {
     history.push("/");
   }, [history]);
 
-  // useEffect(() => {
-  //   const storedData = localStorage.getItem("userData");
-  //   if (!storedData) {
-  //     logout();
-  //   } else {
-  //     const parsingData = JSON.parse(storedData);
-  //     const expDate = new Date(parsingData.expirationDate);
-  //     if (expDate <= new Date()) {
-  //       logout();
-  //     } else {
-  //       setToken(parsingData.idToken);
-  //       setUserName(parsingData.displayName);
-  //       setUserEmail(parsingData.email);
-  //       setPhotoUrl(parsingData.photoUrl);
-  //       setUserId(parsingData.localId);
-  //       setIsVerified(parsingData.emailVerified);
-  //       setIsLoggedIn(true);
-  //     }
-  //   }
-  // }, [logout]);
+  useEffect(() => {
+    const storedData = localStorage.getItem("userData");
+    if (!storedData) {
+      logout();
+    } else {
+      const parsingData = JSON.parse(storedData);
+      const expDate = new Date(parsingData.expirationDate);
+      if (expDate <= new Date()) {
+        logout();
+      } else {
+        console.log(parsingData.photoUrl);
+        setIdToken(parsingData.idToken);
+        setUserName(parsingData.displayName);
+        setUserEmail(parsingData.email);
+        setPhotoUrl(parsingData.photoUrl ? parsingData.photoUrl : null);
+        setUserId(parsingData.localId);
+        setIsVerified(parsingData.emailVerified);
+        setIsLoggedIn(true);
+      }
+    }
+  }, [logout]);
 
   return {
     idToken,
