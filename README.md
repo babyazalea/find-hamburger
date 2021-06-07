@@ -11,7 +11,9 @@
   * burger-finder는 dependency 문제로 에러가 많았음. 불필요한 package는 이번 버전에서 사용하지 않기로(react-bootstrap, fontawesome 등...).
     
     * 6월 5일까지 60% 정도 진행됐음
-      - [ ] 스타일링.
-      - [ ] 비밀번호 재설정 테스트.
-      - [ ] 유저와 유저가 만든 버거 연결.
       - [ ] error-modal 필요한 곳에 모두 적용.
+      - [ ] error-message 한글로 표기.
+      - [x] UserProfile 리팩토링.
+      - [ ] 스타일링.
+      - [x] 비밀번호 재설정 테스트.
+      - [ ] 유저와 유저가 만든 버거 연결.
