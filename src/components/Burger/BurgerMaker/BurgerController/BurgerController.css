@@ -1,5 +1,18 @@
 .burger__controller {
-  align-self: center;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger__controller button {
+  font-family: "Poor Story";
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.26);
 }
 
 .burger__controller form {
@@ -8,9 +21,11 @@
 
 .ingredient-input__delete-button {
   margin-right: 10px;
+  background-color: var(--main-warning);
 }
 .ingredient-input__submit-button {
   margin-left: 10px;
+  background-color: var(--main-success);
 }
 
 .burger__controller-buttons {

@@ -13,7 +13,7 @@ const Burger = () => {
     addIngredient,
     clearIngredients,
     fixedIngredients,
-    // initBurgerAnalyze,
+    initBurger,
   } = useBurger();
 
   const { path } = useRouteMatch();
@@ -27,6 +27,7 @@ const Burger = () => {
             addIngredient={addIngredient}
             clearIngredients={clearIngredients}
             fixedIngredients={fixedIngredients}
+            initBurger={initBurger}
           />
         </Route>
         <Route path={`${path}/analyzed`}>

@@ -12,6 +12,7 @@ const BurgerMaker = (props) => {
         addIngredient={props.addIngredient}
         clearIngredients={props.clearIngredients}
         fixedIngredients={props.fixedIngredients}
+        initBurger={props.initBurger}
       />
       <BurgerText ingredients={props.ingredients} />
     </div>

@@ -1,11 +1,8 @@
 .burger__maker {
-  width: 100%;
+  width: 80%;
   height: 100%;
-  display: grid;
-  justify-content: center;
-  grid-template-rows: 1fr 2fr;
-}
-
-.burger__maker > div {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
