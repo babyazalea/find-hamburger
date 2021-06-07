@@ -134,15 +134,15 @@ const AnalysisResult = (props) => {
         onClick={showModal}
       >
         <BaseCard>
-          {props.score === 100 &&
-            // <div className="celebration-stars">
-            //   <span>★</span>
-            //   <span>★</span>
-            //   <span>★</span>
-            // </div>
-            null}
-          <div className="burger-ranking">
-            <span>{props.name}</span>
+          <div className="burger__rank">
+            {props.score === 100 && (
+              <div className="official-burger__mark">
+                <i className="fas fa-check-circle"></i>
+              </div>
+            )}
+            <div className="burger__name">
+              <span>{props.name}</span>
+            </div>
           </div>
         </BaseCard>
       </li>

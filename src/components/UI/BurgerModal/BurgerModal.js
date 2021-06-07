@@ -15,9 +15,9 @@ const BurgerModal = (props) => {
       <div className="burger__modal">
         <div className="burger__modal-inside">
           <BaseCard
-            customClassName={`${
-              props.cardAnimationClass ? props.cardAnimationClass : ""
-            } burger__modal-inside-base-card`}
+            customClassName={`burger__modal-inside-base-card${
+              props.cardAnimationClass ? " " + props.cardAnimationClass : ""
+            }${props.myBurger ? " my__burger-base-card" : ""}`}
           >
             {props.myBurger ? (
               <div className="my-burger__modal-text">{props.children}</div>

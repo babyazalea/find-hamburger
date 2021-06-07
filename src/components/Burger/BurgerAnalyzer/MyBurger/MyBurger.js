@@ -24,7 +24,7 @@ const MyBurger = (props) => {
         <h1>🍔</h1>
       </BaseCard>
       <BurgerModal isOpen={modalState} closeModal={closeModal} myBurger>
-        <BurgerText ingredients={props.ingredients} />
+        <BurgerText ingredients={props.ingredients} onMyBurger />
       </BurgerModal>
     </React.Fragment>
   );

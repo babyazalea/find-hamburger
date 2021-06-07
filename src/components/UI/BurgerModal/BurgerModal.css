@@ -34,11 +34,18 @@
   justify-content: center;
 }
 
+.my__burger-base-card {
+  background-color: var(--main-white);
+}
+
 .my-burger__modal-text {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
 }
+
 .burger__modal-text {
   display: grid;
   width: 250px;
