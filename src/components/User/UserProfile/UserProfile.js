@@ -1,15 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams, useRouteMatch } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useRouteMatch } from "react-router-dom";
 
-import { AuthContext } from "../../../context/auth-context";
 import { useHttp } from "../../../hooks/http-hook";
 
 import LoadingDots from "../../UI/LoadingDots/LoadingDots";
+import UserInfo from "./UserInfo/UserInfo";
+import UserOptions from "./UserOptions/UserOptions";
 import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
-import { icons } from "../../../assets/icons/icons";
-
 const UserProfile = (props) => {
+  const [infoLoading, setInfoLoading] = useState(true);
   const [idToken, setIdToken] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
   const [userName, setUserName] = useState(null);
@@ -17,11 +17,8 @@ const UserProfile = (props) => {
   const [nameEditing, setNameEditing] = useState(false);
   const [sendedVerification, setSendedVerification] = useState(false);
 
-  const authContext = useContext(AuthContext);
-
   const { isLoading, error, initializeError, sendRequest } = useHttp();
 
-  const { userId } = useParams();
   const { url } = useRouteMatch();
 
   useEffect(() => {
@@ -29,6 +26,7 @@ const UserProfile = (props) => {
     setUserEmail(props.userEmail);
     setUserName(props.userName !== "" ? props.userName : "이름 없음");
     setPhotoUrl(props.photoUrl || null);
+    setInfoLoading(false);
   }, [props.idToken, props.userName, props.userEmail, props.photoUrl]);
 
   const toggleEditMode = () => {
@@ -82,89 +80,33 @@ const UserProfile = (props) => {
     initializeError();
   };
 
-  let profile;
-  if (authContext.isLoggedIn && userEmail !== null && userName !== null) {
-    profile = (
-      <div className="user__profile">
-        <div className="user__image">
-          {photoUrl !== null ? (
-            <img src={photoUrl} alt="profile" />
-          ) : (
-            icons("user-circle")
-          )}
-        </div>
-        <p className="user__email">{userEmail}</p>
-        {nameEditing ? (
-          <input
-            type="text"
-            placeholder="이름"
-            value={userName}
-            name="name"
-            onChange={userNameHandle}
-          />
-        ) : (
-          <p className="user__name">{userName}</p>
-        )}
-      </div>
-    );
-  } else {
-    profile = (
-      <div className="error-message-box">
-        <p>프로필을 불러오지 못했습니다.</p>
-      </div>
-    );
-  }
-
-  let verficaion;
-  verficaion = authContext.isVerified ? null : (
-    <div className="user__email__verification">
-      {sendedVerification ? (
-        <p>
-          인증 메일을 {userEmail}로 보냈습니다. 이메일을 확인하시고 다시 로그인
-          해주세요.
-        </p>
-      ) : (
-        <button onClick={emailVerification}>이메일 인증 하기</button>
-      )}
-    </div>
-  );
-
-  let nameEditButton;
-  nameEditButton = authContext.isVerified ? (
-    <div className="user-name__edit-btn">
-      {nameEditing ? (
-        <React.Fragment>
-          <button onClick={toggleEditMode}>수정 취소</button>
-          <button onClick={changeName}>이대로 수정</button>
-        </React.Fragment>
-      ) : (
-        <button onClick={toggleEditMode}>닉네임 수정</button>
-      )}
-    </div>
-  ) : null;
-
   return (
     <React.Fragment>
       <div className="profile-container">
-        {isLoading || userEmail === null || userName === null ? (
+        {isLoading || infoLoading ? (
           <LoadingDots />
         ) : (
           <React.Fragment>
-            {profile}
+            <UserInfo
+              userEmail={userEmail}
+              userName={userName}
+              photoUrl={photoUrl}
+              nameEditing={nameEditing}
+              userNameHandle={userNameHandle}
+            />
             <React.Fragment>
-              {verficaion}
-              {nameEditButton}
-              {authContext.isVerified ? (
-                <div className="user-password__change-btn">
-                  <Link to={`/users/${userId}/reset-password`}>
-                    <button>비밀번호 변경</button>
-                  </Link>
-                </div>
-              ) : null}
+              <UserOptions
+                sendedVerification={sendedVerification}
+                userEmail={userEmail}
+                emailVerification={emailVerification}
+                toggleEditMode={toggleEditMode}
+                nameEditing={nameEditing}
+                changeName={changeName}
+              />
+              <Link to={`${url}/user-burgers`}>만든 버거 보기</Link>
             </React.Fragment>
           </React.Fragment>
         )}
-        <Link to={`${url}/user-burgers`}>만든 버거 보기</Link>
       </div>
       <ErrorModal error={error} close={confirmError} />
     </React.Fragment>

@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useHttp } from "../../../hooks/http-hook";
 
 import LoadingDots from "../../UI/LoadingDots/LoadingDots";
+import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
 const ResetPassword = (props) => {
   const [userEmail, setUserEmail] = useState(null);
@@ -68,24 +69,27 @@ const ResetPassword = (props) => {
   }
 
   return (
-    <div className="password__reset">
-      {isLoading ? (
-        <LoadingDots />
-      ) : (
-        <div className="reset-password__wrapper">
-          {sendedResetPassword ? (
-            <p className="password-reset__confirm-message">
-              비밀번호 변경 메일을 보냈습니다. 메일을 확인해주세요.
-            </p>
-          ) : (
-            <React.Fragment>{passwordResetPart}</React.Fragment>
-          )}
-          <button variant="warning" onClick={backToProfile}>
-            되돌아가기
-          </button>
-        </div>
-      )}
-    </div>
+    <React.Fragment>
+      <div className="password__reset">
+        {isLoading ? (
+          <LoadingDots />
+        ) : (
+          <div className="reset-password__wrapper">
+            {sendedResetPassword ? (
+              <p className="password-reset__confirm-message">
+                비밀번호 변경 메일을 보냈습니다. 메일을 확인해주세요.
+              </p>
+            ) : (
+              <React.Fragment>{passwordResetPart}</React.Fragment>
+            )}
+            <button variant="warning" onClick={backToProfile}>
+              되돌아가기
+            </button>
+          </div>
+        )}
+      </div>
+      <ErrorModal error={error} close={confirmError} />
+    </React.Fragment>
   );
 };
 

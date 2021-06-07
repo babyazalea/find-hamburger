@@ -24,7 +24,7 @@ const User = (props) => {
           <UserBurgers />
         </Route>
         <Route path={`${path}/reset-password`}>
-          <ResetPassword notLoggedIn={false} />
+          <ResetPassword notLoggedIn={false} userEmail={props.userEmail} />
         </Route>
       </Switch>
     </div>
