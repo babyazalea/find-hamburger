@@ -21,7 +21,7 @@ export const useAuth = () => {
     setIdToken(loginData["idToken"]);
     setUserName(loginData["displayName"]);
     setUserEmail(loginData["email"]);
-    setPhotoUrl(loginData["photoUrl"]);
+    setPhotoUrl(null);
     setUserId(loginData["localId"]);
     setIsVerified(userData["emailVerified"]);
     setIsLoggedIn(true);
