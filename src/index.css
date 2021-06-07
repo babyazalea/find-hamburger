@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
 
+@import url("../node_modules/@fortawesome/fontawesome-free/css/all.css");
+
 :root {
+  --main-dark: #263238;
   --main-yellow: #fabc2a;
   --main-white: #f2edeb;
+  --main-warning: #f05365;
+  --main-success: #8ea604;
 }
 
 html {
@@ -54,6 +59,7 @@ code {
 main {
   width: 100%;
   height: 100vh;
+  background-color: var(--main-white);
 }
 
 main > div {
