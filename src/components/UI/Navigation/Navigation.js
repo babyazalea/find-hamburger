@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../../context/auth-context";
 
-import { icons } from "../../../assets/icons/icons";
 import "./Navigation.css";
 
 const Navigation = (props) => {
@@ -31,12 +30,11 @@ const Navigation = (props) => {
               <li>
                 <Link to={`/users/${props.userId}`}>
                   <div className="user-name__display">
-                    {/* {props.photoUrl !== null ? (
+                    {props.photoUrl !== null ? (
                       <img src={props.photoUrl} alt="유저 사진" />
                     ) : (
-                      icons("user-circle")
-                    )} */}
-                    {icons("user-circle")}
+                      <i className="fas fa-user-circle"></i>
+                    )}
                     {props.userName !== "" ? (
                       <span>{props.userName}</span>
                     ) : (
