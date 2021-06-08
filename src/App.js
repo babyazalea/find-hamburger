@@ -32,46 +32,24 @@ const App = () => {
         <Home />
       </Route>
       <Route path="/burger-maker">
-        {/* <Burger
-                    isLoggedIn={isLoggedIn}
-                    isVerified={isVerified}
-                    userId={userId}
-                  /> */}
         <Burger />
       </Route>
-      {/* <Route path="/users/reset-password" exact>
-                  <ResetPassword notLoggedIn={true} />
-                </Route> */}
-      {/* <Route path="/users/:id/reset-password">
-                  <ResetPassword userEmail={userEmail} />
-                </Route> */}
       <Route path="/credits" exact>
         <Credits />
       </Route>
       <Route path="/users/:userId">
-        {/* <UserProfile
-                    token={token}
-                    userId={userId}
-                    userName={userName}
-                    userEmail={userEmail}
-                    photoUrl={photoUrl}
-                    updateProfile={updateProfile}
-                  /> */}
         <User
           idToken={idToken}
           userName={userName}
           userEmail={userEmail}
           photoUrl={photoUrl}
           updateProfile={updateProfile}
+          logout={logout}
         />
       </Route>
       <Route path="/auth">
-        <Auth login={login} googleLogin={googleLogin} />
+        <Auth login={login} />
       </Route>
-      {/* <Route path="/auth/signup" component={Signup} exact />
-                <Route path="/auth/google/:token">
-                  <AuthWithGoogle googleLogin={googleLogin} />
-                </Route> */}
     </Switch>
   );
 

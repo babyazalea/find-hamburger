@@ -65,4 +65,10 @@ nav li:hover {
   cursor: pointer;
   font-family: "Poor Story";
   font-size: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.1s;
+}
+
+.logout__btn:hover {
+  color: rgba(0, 0, 0, 1);
 }

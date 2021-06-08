@@ -29,20 +29,6 @@ export const useAuth = () => {
     history.push("/");
   };
 
-  const googleLogin = (responseData) => {
-    storingData(responseData);
-
-    setIdToken(responseData["idToken"]);
-    setUserName(responseData["displayName"]);
-    setUserEmail(responseData["email"]);
-    setPhotoUrl(responseData["photoUrl"]);
-    setUserId(responseData["localId"]);
-    setIsVerified(responseData["emailVerified"]);
-    setIsLoggedIn(true);
-
-    history.push("/");
-  };
-
   const updateProfile = (responseData) => {
     storingData(responseData);
 
@@ -90,7 +76,6 @@ export const useAuth = () => {
     isLoggedIn,
     isVerified,
     login,
-    googleLogin,
     updateProfile,
     logout,
   };

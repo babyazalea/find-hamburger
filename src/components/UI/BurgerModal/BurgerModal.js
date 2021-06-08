@@ -42,7 +42,7 @@ const BurgerModal = (props) => {
           className="burger__modal-close-button"
           onClick={props.closeModal}
         >
-          <span>❌</span>
+          <i className="fas fa-times" />
         </button>
       </div>
     </div>,

@@ -65,13 +65,13 @@ const AnalysisResult = (props) => {
   if (props.realBurger && !urlExtensionState) {
     urlExtensionBtn = (
       <button onClick={openExtension} className="modal-expension-btn">
-        <span>⬇</span>
+        <i className="fas fa-chevron-down" />
       </button>
     );
   } else if (props.realBurger && urlExtensionState) {
     urlExtensionBtn = (
       <button onClick={closeExtension} className="modal-expension-btn">
-        <span>⬆</span>
+        <i className="fas fa-chevron-up" />
       </button>
     );
   }

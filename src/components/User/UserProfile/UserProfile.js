@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 
+import { AuthContext } from "../../../context/auth-context";
 import { useHttp } from "../../../hooks/http-hook";
 
 import LoadingDots from "../../UI/LoadingDots/LoadingDots";
 import UserInfo from "./UserInfo/UserInfo";
 import UserOptions from "./UserOptions/UserOptions";
 import ErrorModal from "../../UI/ErrorModal/ErrorModal";
+
+import "./UserProfile.css";
 
 const UserProfile = (props) => {
   const [infoLoading, setInfoLoading] = useState(true);
@@ -16,6 +19,8 @@ const UserProfile = (props) => {
   const [photoUrl, setPhotoUrl] = useState(null);
   const [nameEditing, setNameEditing] = useState(false);
   const [sendedVerification, setSendedVerification] = useState(false);
+
+  const authContext = useContext(AuthContext);
 
   const { isLoading, error, initializeError, sendRequest } = useHttp();
 
@@ -80,9 +85,11 @@ const UserProfile = (props) => {
     initializeError();
   };
 
+  console.log(authContext.isVerified);
+
   return (
     <React.Fragment>
-      <div className="profile-container">
+      <div className="profile__container">
         {isLoading || infoLoading ? (
           <LoadingDots />
         ) : (
@@ -103,7 +110,13 @@ const UserProfile = (props) => {
                 nameEditing={nameEditing}
                 changeName={changeName}
               />
-              <Link to={`${url}/user-burgers`}>만든 버거 보기</Link>
+              <Link className="user-burger__link" to={`${url}/user-burgers`}>
+                <button disabled={!authContext.isVerified}>
+                  <i className="fas fa-hamburger" />
+                  <span>내가 만든 버거</span>
+                  <i className="fas fa-hamburger" />
+                </button>
+              </Link>
             </React.Fragment>
           </React.Fragment>
         )}

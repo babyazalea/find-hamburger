@@ -1,0 +1,23 @@
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__container button {
+  font-family: "Poor Story";
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.26);
+}
+
+.user-burger__link {
+  margin-top: 30px;
+}
+
+.user-burger__link span {
+  margin: 0 5px;
+}

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import { AuthContext } from "../../../../context/auth-context";
 
-import { icons } from "../../../../assets/icons/icons";
+import "./UserInfo.css";
 
 const UserInfo = (props) => {
   const authContext = useContext(AuthContext);
@@ -17,21 +17,25 @@ const UserInfo = (props) => {
             {props.photoUrl !== null ? (
               <img src={props.photoUrl} alt="profile" />
             ) : (
-              icons("user-circle")
+              <i className="fas fa-user-circle"></i>
             )}
           </div>
-          <p className="user__email">{props.userEmail}</p>
-          {props.nameEditing ? (
-            <input
-              type="text"
-              placeholder="이름"
-              value={props.userName}
-              name="name"
-              onChange={props.userNameHandle}
-            />
-          ) : (
-            <p className="user__name">{props.userName}</p>
-          )}
+          <div>
+            <span className="user__email">{props.userEmail}</span>
+          </div>
+          <div>
+            {props.nameEditing ? (
+              <input
+                type="text"
+                placeholder="이름"
+                value={props.userName}
+                name="name"
+                onChange={props.userNameHandle}
+              />
+            ) : (
+              <span className="user__name">{props.userName}</span>
+            )}
+          </div>
         </div>
       ) : (
         <div className="error-message-box">

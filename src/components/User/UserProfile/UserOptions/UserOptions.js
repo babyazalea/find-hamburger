@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 
 import { AuthContext } from "../../../../context/auth-context";
 
+import "./UserOptions.css";
+
 const UserOptions = (props) => {
   const { userId } = useParams();
 
@@ -40,9 +42,14 @@ const UserOptions = (props) => {
     <div className="user__options">
       {verficaion}
       {nameEditButton}
-      <div className="user-password__change-btn">
+      <div>
         <Link to={`/users/${userId}/reset-password`}>
           <button>비밀번호 변경</button>
+        </Link>
+      </div>
+      <div>
+        <Link to={`/users/${userId}/delete-account`}>
+          <button className="delete-account__button">계정 삭제</button>
         </Link>
       </div>
     </div>

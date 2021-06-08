@@ -12,8 +12,6 @@ const AuthController = (props) => {
 
   const { isLoading, error, initializeError, sendRequest } = useHttp();
 
-  const googleOAuthUrl = process.env.REACT_APP_GOOGLE_OAUTH_URL;
-
   const onChange = (event) => {
     const {
       target: { name, value },
@@ -81,11 +79,6 @@ const AuthController = (props) => {
               </div>
             </form>
             <div className="auth__control">
-              <a href={googleOAuthUrl}>
-                <button>
-                  <span>google</span>
-                </button>
-              </a>
               <Link to="/auth/signup">
                 <button>가입하러 가기</button>
               </Link>

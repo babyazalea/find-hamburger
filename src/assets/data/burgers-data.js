@@ -1,6 +1,10 @@
 import initialIngredients from "./initial-ingredients";
 
 const brands = {
+  test: {
+    brandName: "mcdonalds",
+    url: "https://www.mcdonalds.co.kr/kor/main.do",
+  },
   mcdonalds: {
     brandName: "mcdonalds",
     url: "https://www.mcdonalds.co.kr/kor/main.do",
@@ -37,6 +41,7 @@ const burgers = {
     lidBun: 1,
     hamburgPatty: 1,
     bottomBun: 1,
+    realBurger: brands.test,
   },
   "버거킹 테스트": {
     ...initialIngredients,

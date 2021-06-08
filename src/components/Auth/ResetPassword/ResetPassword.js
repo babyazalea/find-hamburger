@@ -82,9 +82,7 @@ const ResetPassword = (props) => {
             ) : (
               <React.Fragment>{passwordResetPart}</React.Fragment>
             )}
-            <button variant="warning" onClick={backToProfile}>
-              되돌아가기
-            </button>
+            <button onClick={backToProfile}>되돌아가기</button>
           </div>
         )}
       </div>

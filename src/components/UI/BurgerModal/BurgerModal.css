@@ -36,6 +36,7 @@
 
 .my__burger-base-card {
   background-color: var(--main-white);
+  cursor: pointer;
 }
 
 .my-burger__modal-text {
@@ -76,13 +77,14 @@
   background: none;
   border: none;
   font-size: 2rem;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
   transition: color 0.3s;
   z-index: 200;
 }
 
-.burger-modal-close-button:hover {
-  color: rgba(0, 0, 0, 1);
+.burger__modal-close-button:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 .modal-expension-btn {
@@ -91,6 +93,7 @@
   border: none;
   color: rgba(0, 0, 0, 0.5);
   transition: color 0.3s;
+  cursor: pointer;
 }
 .modal-expension-btn:hover {
   color: rgba(0, 0, 0, 1);

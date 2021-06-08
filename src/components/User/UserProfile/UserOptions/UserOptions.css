@@ -1,0 +1,10 @@
+.user__options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user__options div:not(:last-child) {
+  margin-bottom: 15px;
+}
