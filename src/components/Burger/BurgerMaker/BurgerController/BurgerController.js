@@ -5,26 +5,26 @@ import { convertingText } from "../../../../utils/converting-text";
 import "./BurgerController.css";
 
 const BurgerController = (props) => {
-  const [ingText, setIngText] = useState("");
+  const [enteredText, setEnteredText] = useState("");
   const textInputElement = useRef(null);
 
   const handleText = () => {
-    const enteredText = textInputElement.current.value;
-    const ridWhiteSpaceText = enteredText.replace(/\s/g, "");
-    const convertedText = convertingText(ridWhiteSpaceText);
-
-    setIngText(convertedText);
+    setEnteredText(textInputElement.current.value);
   };
 
-  const handleConvertedText = (event, text) => {
+  const convertingTextAndSubmit = (event, text) => {
     event.preventDefault();
+    const ridWhiteSpaceText = text.replace(/\s/g, "");
+    const convertedText = convertingText(ridWhiteSpaceText);
 
-    props.addIngredient(text);
+    if (convertedText === "") return;
+
+    props.addIngredient(convertedText);
   };
 
   const clearInput = () => {
     textInputElement.current.value = "";
-    setIngText("");
+    setEnteredText("");
   };
 
   return (
@@ -40,7 +40,7 @@ const BurgerController = (props) => {
         <form
           id="ingredient__form"
           onSubmit={(event) => {
-            handleConvertedText(event, ingText);
+            convertingTextAndSubmit(event, enteredText);
           }}
         >
           <input
@@ -55,7 +55,7 @@ const BurgerController = (props) => {
           type="submit"
           className="ingredient-input__submit-button"
           form="ingredient__form"
-          disabled={ingText === "" || ingText.trim() === ""}
+          disabled={enteredText === "" || enteredText.trim() === ""}
         >
           추가
         </button>
