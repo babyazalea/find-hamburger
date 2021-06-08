@@ -41,6 +41,7 @@ const BurgerController = (props) => {
           type="submit"
           className="ingredient-input__submit-button"
           form="ingredient__form"
+          disabled={enteredText === "" || enteredText.trim() === ""}
         >
           추가
         </button>
