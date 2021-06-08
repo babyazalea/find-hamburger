@@ -1,15 +1,33 @@
 .burger__analyzer {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Poor Story";
+}
+
+.burger__anlyzer-guide {
+  position: absolute;
+  max-width: 350px;
+  top: 35px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.burger__anlyzer-guide p {
+  font-size: 0.8rem;
+}
+
+.burger__anlyzer-guide i {
+  font-size: 1rem;
+  margin-right: 5px;
 }
 
 .result__board {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .result__board ul {

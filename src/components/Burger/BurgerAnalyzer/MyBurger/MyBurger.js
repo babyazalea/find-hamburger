@@ -20,7 +20,7 @@ const MyBurger = (props) => {
   return (
     <React.Fragment>
       <BaseCard customClassName="my__burger" onClick={showModal}>
-        <span>내가만든버거</span>
+        <p>방금 만든 버거</p>
         <h1>🍔</h1>
       </BaseCard>
       <BurgerModal isOpen={modalState} closeModal={closeModal} myBurger>

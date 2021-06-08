@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+
+import { AuthContext } from "../../../context/auth-context";
 
 import MyBurger from "./MyBurger/MyBurger";
 import AnalysisResult from "./AnalysisResult/AnalysisResult";
@@ -10,6 +12,8 @@ import "./BurgerAnalyzer.css";
 
 const BurgerAnalyzer = (props) => {
   const [scoreBoard, setScoreBoard] = useState(null);
+
+  const authContext = useContext(AuthContext);
 
   useEffect(() => {
     setScoreBoard(burgerRanker(props.ingredients));
@@ -51,6 +55,15 @@ const BurgerAnalyzer = (props) => {
 
   return (
     <div className="burger__analyzer">
+      {authContext.isVerified ? null : (
+        <div className="burger__anlyzer-guide">
+          <p>
+            <i className="fas fa-exclamation-circle"></i>햄버거 찾기를 통해 찾은
+            햄버거를 온라인 서버에 저장하실 수도 있습니다. 저장 기능은, 이메일을
+            통한 회원가입 후 이메일 확인을 거치시면 이용이 가능합니다.
+          </p>
+        </div>
+      )}
       {scoreBoard ? (
         <div className="result__board">
           <MyBurger ingredients={props.ingredients} />
