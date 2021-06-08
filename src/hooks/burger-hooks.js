@@ -3,8 +3,6 @@ import { useHistory } from "react-router-dom";
 
 import initialIngredients from "../assets/data/initial-ingredients";
 
-import { convertingText } from "../utils/converting-text";
-
 export const useBurger = () => {
   const history = useHistory();
 
@@ -16,23 +14,19 @@ export const useBurger = () => {
 
   const [isAnalyzed, setStateOfAnalyze] = useState(false);
 
-  const addIngredient = (event, text) => {
-    event.preventDefault();
+  const addIngredient = (text) => {
     const oldIngredients = ingredients;
-    const convertedTextArg = text.replace(/\s/g, "");
-
-    const convertedText = convertingText(convertedTextArg);
 
     let updatedIngredientCount;
-    if (oldIngredients[convertedText]) {
-      updatedIngredientCount = oldIngredients[convertedText] + 1;
+    if (oldIngredients[text]) {
+      updatedIngredientCount = oldIngredients[text] + 1;
     } else {
       updatedIngredientCount = 1;
     }
     const updatedIngredients = {
       ...ingredients,
     };
-    updatedIngredients[convertedText] = updatedIngredientCount;
+    updatedIngredients[text] = updatedIngredientCount;
     setIngredients(updatedIngredients);
   };
 
