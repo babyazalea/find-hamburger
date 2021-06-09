@@ -6,6 +6,8 @@ import { useHttp } from "../../../hooks/http-hook";
 import LoadingDots from "../../UI/LoadingDots/LoadingDots";
 import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
+import "./AuthController.css";
+
 const AuthController = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -75,15 +77,19 @@ const AuthController = (props) => {
                   name="password"
                   onChange={(event) => onChange(event)}
                 />
-                <button onClick={onLogin}>로그인</button>
+                <button className="login__button" onClick={onLogin}>
+                  로그인
+                </button>
               </div>
             </form>
             <div className="auth__control">
               <Link to="/auth/signup">
-                <button>가입하러 가기</button>
+                <button className="signup__link-button">가입하러 가기</button>
               </Link>
               <Link to="/auth/reset-password">
-                <button>비밀번호를 잃어버리셨나요?</button>
+                <button className="password__reset-link-button">
+                  비밀번호를 잃어버리셨나요?
+                </button>
               </Link>
             </div>
           </React.Fragment>

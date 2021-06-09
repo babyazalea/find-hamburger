@@ -1,0 +1,15 @@
+.auth-controller__wrapper > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.auth__input-group > *:not(:last-child) {
+  margin-right: 15px;
+}
+
+.login__button {
+  background-color: var(--main-success);
+}
+
+.auth__control a:not(:last-child) {
+  margin-right: 15px;
+}

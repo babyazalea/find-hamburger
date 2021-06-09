@@ -6,11 +6,13 @@ import { useHttp } from "../../../hooks/http-hook";
 import LoadingDots from "../../UI/LoadingDots/LoadingDots";
 import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
+import "./Signup.css";
+
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordError, setPassowordError] = useState(true);
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordError, setPassowordError] = useState(true);
 
   const { isLoading, error, initializeError, sendRequest } = useHttp();
 
@@ -23,6 +25,8 @@ const Signup = () => {
       confirmPassword !== ""
     ) {
       setPassowordError(false);
+    } else {
+      setPassowordError(true);
     }
   }, [password, confirmPassword]);
 
@@ -77,18 +81,21 @@ const Signup = () => {
         ) : (
           <form>
             <div className="signup__input-group">
+              <label>이메일</label>
               <input
                 type="email"
                 placeholder="이메일"
                 name="email"
                 onChange={(e) => onChange(e)}
               />
+              <label>비밀번호</label>
               <input
                 type="password"
                 placeholder="비밀번호"
                 name="password"
                 onChange={(e) => onChange(e)}
               />
+              <label>비밀번호 확인</label>
               <input
                 type="password"
                 placeholder="비밀번호 확인"
@@ -96,8 +103,12 @@ const Signup = () => {
                 onChange={(e) => onChange(e)}
               />
             </div>
-            <div className="auth__submit-controll">
-              <button onClick={onSignup} disabled={passwordError}>
+            <div className="signup__submit-controll">
+              <button
+                className="signup__button"
+                onClick={onSignup}
+                disabled={passwordError}
+              >
                 가입
               </button>
             </div>

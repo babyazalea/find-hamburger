@@ -6,6 +6,8 @@ import { useHttp } from "../../../hooks/http-hook";
 import LoadingDots from "../../UI/LoadingDots/LoadingDots";
 import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
+import "./ResetPassword.css";
+
 const ResetPassword = (props) => {
   const [userEmail, setUserEmail] = useState(null);
   const [sendedResetPassword, setSendedResetPassword] = useState(false);
@@ -50,6 +52,7 @@ const ResetPassword = (props) => {
     passwordResetPart = (
       <React.Fragment>
         <input
+          className="password-reset__input"
           type="email"
           placeholder="이메일"
           name="email"

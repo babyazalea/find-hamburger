@@ -21,7 +21,6 @@ const App = () => {
     isLoggedIn,
     isVerified,
     login,
-    googleLogin,
     updateProfile,
     logout,
   } = useAuth();

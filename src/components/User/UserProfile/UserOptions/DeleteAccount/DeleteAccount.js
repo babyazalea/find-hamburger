@@ -6,6 +6,8 @@ import { useHttp } from "../../../../../hooks/http-hook";
 import LoadingDots from "../../../../UI/LoadingDots/LoadingDots";
 import ErrorModal from "../../../../UI/ErrorModal/ErrorModal";
 
+import "./DeleteAccount.css";
+
 const DeleteAccount = (props) => {
   const [enteredEmail, setEnteredEmail] = useState(null);
   const { isLoading, error, initializeError, sendRequest } = useHttp();

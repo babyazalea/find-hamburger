@@ -8,3 +8,7 @@
 .user__options div:not(:last-child) {
   margin-bottom: 15px;
 }
+
+.user-name__edit-btn button:not(:last-child) {
+  margin-right: 15px;
+}

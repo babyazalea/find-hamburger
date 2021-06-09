@@ -1,0 +1,7 @@
+.delete-account__wrapper > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.delete-account__controller button {
+  margin-right: 15px;
+}

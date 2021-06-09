@@ -67,8 +67,13 @@ nav li:hover {
   font-size: 1rem;
   color: rgba(0, 0, 0, 0.5);
   transition: color 0.1s;
+  border-radius: none;
+  padding: 0;
+  box-shadow: none;
 }
 
 .logout__btn:hover {
   color: rgba(0, 0, 0, 1);
+  transform: none;
+  box-shadow: none;
 }
