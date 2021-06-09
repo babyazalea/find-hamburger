@@ -27,3 +27,7 @@
 .signup__button {
   width: 50%;
 }
+
+.signup__finished p {
+  margin-bottom: 20px;
+}

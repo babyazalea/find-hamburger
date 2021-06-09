@@ -15,7 +15,7 @@
       - [ ] 각 재료 클릭시 제거 기능.
       - [x] burger-analyzed 페이지에 로그인 관련된 문구 추가하기.
       - [ ] error-modal 필요한 곳에 모두 적용.
-      - [ ] error-message 한글로 표기.
+      - [x] error-message 한글로 표기.
       - [ ] 가입 성공 메시지 출력.
       - [ ] route guard 만들기.
       - [x] UserProfile 리팩토링.
