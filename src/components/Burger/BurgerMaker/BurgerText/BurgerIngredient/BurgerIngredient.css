@@ -1,3 +1,11 @@
+.in__my-burger button {
+  display: none;
+}
+
+.in__my-burger .ingredient:hover {
+  box-shadow: none;
+}
+
 .ingredient {
   position: relative;
   border-radius: 12px;
