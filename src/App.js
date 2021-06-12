@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import { AuthContext } from "./context/auth-context";
 import { useAuth } from "./hooks/auth-hook";
@@ -36,19 +36,22 @@ const App = () => {
       <Route path="/credits" exact>
         <Credits />
       </Route>
-      <Route path="/users/:userId">
-        <User
-          idToken={idToken}
-          userName={userName}
-          userEmail={userEmail}
-          photoUrl={photoUrl}
-          updateProfile={updateProfile}
-          logout={logout}
-        />
-      </Route>
+      {isLoggedIn && (
+        <Route path="/users/:userId">
+          <User
+            idToken={idToken}
+            userName={userName}
+            userEmail={userEmail}
+            photoUrl={photoUrl}
+            updateProfile={updateProfile}
+            logout={logout}
+          />
+        </Route>
+      )}
       <Route path="/auth">
         <Auth login={login} />
       </Route>
+      <Redirect to="/" />
     </Switch>
   );
 
