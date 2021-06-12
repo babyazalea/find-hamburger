@@ -93,6 +93,7 @@
   background: none;
   border: none;
   color: rgba(0, 0, 0, 0.5);
+  box-shadow: none;
   transition: color 0.3s;
   cursor: pointer;
 }

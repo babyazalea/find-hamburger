@@ -12,6 +12,10 @@
   transition: all 0.1s ease-in-out;
 }
 
+.ingredient button {
+  transition: all 0.05s;
+}
+
 .ingredient:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   transform: none;

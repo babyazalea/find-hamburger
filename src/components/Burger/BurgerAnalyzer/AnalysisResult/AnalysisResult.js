@@ -28,8 +28,6 @@ const AnalysisResult = (props) => {
     setCardAnimationClass("");
   };
 
-  // converted rank & score
-
   let burgerRankText = "";
   let burgerScoreText = "";
 
@@ -46,8 +44,6 @@ const AnalysisResult = (props) => {
     burgerRankText = "찾는 버거가 아닐지도 몰라요.";
     burgerScoreText = "햄버거는 무수히 많은 점으로 이루어져 있다";
   }
-
-  // modal
 
   let urlExtensionBtn = "";
   let urlExtension = "";
