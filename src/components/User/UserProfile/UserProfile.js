@@ -85,8 +85,6 @@ const UserProfile = (props) => {
     initializeError();
   };
 
-  console.log(authContext.isVerified);
-
   return (
     <React.Fragment>
       <div className="profile__container">

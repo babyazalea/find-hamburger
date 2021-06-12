@@ -11,6 +11,8 @@ import { burgerRanker } from "../../../utils/burger-ranker";
 import "./BurgerAnalyzer.css";
 
 const BurgerAnalyzer = (props) => {
+  console.log(props.ingredients);
+
   const [scoreBoard, setScoreBoard] = useState(null);
 
   const authContext = useContext(AuthContext);
