@@ -14,19 +14,30 @@ export const useBurger = () => {
 
   const [isAnalyzed, setStateOfAnalyze] = useState(false);
 
-  const addIngredient = (text) => {
+  const addIngredient = (ingredient) => {
     const oldIngredients = ingredients;
 
     let updatedIngredientCount;
-    if (oldIngredients[text]) {
-      updatedIngredientCount = oldIngredients[text] + 1;
+    if (oldIngredients[ingredient]) {
+      updatedIngredientCount = oldIngredients[ingredient] + 1;
     } else {
       updatedIngredientCount = 1;
     }
     const updatedIngredients = {
       ...ingredients,
     };
-    updatedIngredients[text] = updatedIngredientCount;
+    updatedIngredients[ingredient] = updatedIngredientCount;
+    setIngredients(updatedIngredients);
+  };
+
+  const removeIngredient = (ingredient) => {
+    const oldIngredients = ingredients;
+    const updatedIngredientCount = oldIngredients[ingredient] - 1;
+
+    const updatedIngredients = {
+      ...ingredients,
+    };
+    updatedIngredients[ingredient] = updatedIngredientCount;
     setIngredients(updatedIngredients);
   };
 
@@ -48,6 +59,7 @@ export const useBurger = () => {
     ingredients,
     isAnalyzed,
     addIngredient,
+    removeIngredient,
     fixedIngredients,
     initBurger,
   };

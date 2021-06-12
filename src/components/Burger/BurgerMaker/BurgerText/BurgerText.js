@@ -9,7 +9,14 @@ const BurgerText = (props) => {
 
   let transformedIngredients = ingredientsKeys.map((igKey) => {
     return [...Array(props.ingredients[igKey])].map((_, i) => {
-      return <BurgerIngredient key={igKey + i} type={igKey} />;
+      return (
+        <BurgerIngredient
+          key={igKey + i}
+          type={igKey}
+          addIngredient={props.addIngredient}
+          removeIngredient={props.removeIngredient}
+        />
+      );
     });
   });
 

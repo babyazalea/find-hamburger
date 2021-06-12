@@ -5,146 +5,86 @@ import "./BurgerIngredient.css";
 const BurgerIngredient = (props) => {
   let ingredient = null;
 
+  const ingredientLayout = (ingClassName, ingredientText) => {
+    return (
+      <div className={`ingredient ${ingClassName}`}>
+        <button
+          className="ingredient__add-button"
+          onClick={() => props.addIngredient(props.type)}
+        >
+          <i className="fas fa-plus-circle"></i>
+        </button>
+        <h2>{ingredientText}</h2>
+        <button
+          className="ingredient__remove-button"
+          onClick={() => props.removeIngredient(props.type)}
+        >
+          <i className="fas fa-minus-circle"></i>
+        </button>
+      </div>
+    );
+  };
+
   switch (props.type) {
     case "lidBun":
-      ingredient = (
-        <div className="ingredient lid-bun">
-          <h2>뚜껑</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("lid-bun", "뚜껑");
       break;
     case "cheese":
-      ingredient = (
-        <div className="ingredient cheese">
-          <h2>치즈</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("cheese", "치즈");
       break;
     case "lettuce":
-      ingredient = (
-        <div className="ingredient lettuce">
-          <h2>양상추</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("lettuce", "양상추");
       break;
     case "pickle":
-      ingredient = (
-        <div className="ingredient pickle">
-          <h2>피클</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("pickle", "피클");
       break;
     case "onion":
-      ingredient = (
-        <div className="ingredient onion">
-          <h2>양파</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("onion", "양파");
       break;
     case "tomato":
-      ingredient = (
-        <div className="ingredient tomato">
-          <h2>토마토</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("tomato", "토마토");
       break;
     case "spicySauce":
-      ingredient = (
-        <div className="ingredient spicy-sauce">
-          <h2>매운 소스</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("spicy-sauce", "매운 소스");
       break;
     case "bicmacSauce":
-      ingredient = (
-        <div className="ingredient bicmac-sauce">
-          <h2>빅맥 소스</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("bicmac-sauce", "빅맥 소스");
       break;
     case "teriyakiSauce":
-      ingredient = (
-        <div className="ingredient teriyaki-sauce">
-          <h2>데리야끼 소스</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("teriyaki-sauce", "데리야키 소스");
       break;
     case "ketchupSauce":
-      ingredient = (
-        <div className="ingredient ketchup-sauce">
-          <h2>케첩 소스</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("ketchup-sauce", "케쳡 소스");
       break;
     case "mayoSauce":
-      ingredient = (
-        <div className="ingredient mayo-sauce">
-          <h2>마요 소스</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("mayo-sauce", "마요 소스");
       break;
     case "hamburgPatty":
-      ingredient = (
-        <div className="ingredient hamburg-patty">
-          <h2>햄버그 패티</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("hamburg-patty", "햄버그 패티");
       break;
     case "porkPatty":
-      ingredient = (
-        <div className="ingredient pork-patty">
-          <h2>돼지고기 패티</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("pork-patty", "돼지고기 패티");
       break;
     case "beefPatty":
-      ingredient = (
-        <div className="ingredient beef-patty">
-          <h2>소고기 패티</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("beef-patty", "소고기 패티");
       break;
     case "shrimpPatty":
-      ingredient = (
-        <div className="ingredient shrimp-patty">
-          <h2>새우 패티</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("shrimp-patty", "새우 패티");
       break;
     case "chickenPatty":
-      ingredient = (
-        <div className="ingredient chicken-patty">
-          <h2>치킨 패티</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("chicken-patty", "치킨 패티");
       break;
     case "vegetablePatty":
-      ingredient = (
-        <div className="ingredient vegetable-patty">
-          <h2>식물성 패티</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("vegetable-patty", "비건 패티");
       break;
     case "extraBread":
-      ingredient = (
-        <div className="ingredient extra-bread">
-          <h2>빵</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("extra-bread", "빵");
       break;
     case "hashBrown":
-      ingredient = (
-        <div className="ingredient hash-brown">
-          <h2>해쉬브라운</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("hash-brown", "해시브라운");
       break;
     case "bottomBun":
-      ingredient = (
-        <div className="ingredient bottom-bun">
-          <h2>받침대</h2>
-        </div>
-      );
+      ingredient = ingredientLayout("bottom-bun", "받침대");
       break;
     default:
       ingredient = null;

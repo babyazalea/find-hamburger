@@ -1,3 +1,43 @@
+.ingredient {
+  position: relative;
+  border-radius: 12px;
+  transition: all 0.1s ease-in-out;
+}
+
+.ingredient:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transform: none;
+}
+
+.ingredient:hover button {
+  visibility: visible;
+}
+
+.ingredient button {
+  position: absolute;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  box-shadow: none;
+  visibility: hidden;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.ingredient button:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.ingredient__remove-button {
+  right: 1rem;
+  top: 50%;
+}
+
+.ingredient__add-button {
+  left: 1rem;
+  top: 50%;
+}
+
 .ingredient h2 {
   font-weight: bold;
 }

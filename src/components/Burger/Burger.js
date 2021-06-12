@@ -11,6 +11,7 @@ const Burger = () => {
     ingredients,
     isAnalyzed,
     addIngredient,
+    removeIngredient,
     clearIngredients,
     fixedIngredients,
     initBurger,
@@ -25,6 +26,7 @@ const Burger = () => {
           <BurgerMaker
             ingredients={ingredients}
             addIngredient={addIngredient}
+            removeIngredient={removeIngredient}
             clearIngredients={clearIngredients}
             fixedIngredients={fixedIngredients}
             initBurger={initBurger}
