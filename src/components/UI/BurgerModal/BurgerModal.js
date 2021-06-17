@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import BaseCard from "../BaseCard/BaseCard";
+import BurgerSaveButton from "../BurgerSaveButton/BurgerSaveButton";
 
 import "./BurgerModal.css";
 
@@ -34,6 +35,7 @@ const BurgerModal = (props) => {
                 {props.urlExtension}
               </div>
             )}
+            <BurgerSaveButton />
           </BaseCard>
         </div>
       </div>

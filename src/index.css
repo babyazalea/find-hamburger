@@ -81,7 +81,7 @@ button {
   transition: all 0.1s;
 }
 
-button:hover:not(.ingredient__add-button, .ingredient__remove-button, .burger__modal-close-button, .modal-expension-btn) {
+button:hover:not(.ingredient__add-button, .ingredient__remove-button, .burger__modal-close-button, .modal-expension-btn, .burger-save__button) {
   transform: translate(-1px, -1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
 }

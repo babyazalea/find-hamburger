@@ -1,0 +1,23 @@
+.burger-save__button {
+  position: absolute;
+  bottom: 5%;
+  right: 2.3%;
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.1s ease;
+}
+
+.burger-save__button:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.my__burger .burger-save__button {
+  right: 4%;
+}
+
+.burger__modal-inside-base-card .burger-save__button {
+  right: 5%;
+}

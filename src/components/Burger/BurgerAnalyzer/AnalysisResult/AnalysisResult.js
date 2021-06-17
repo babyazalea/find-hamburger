@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import BaseCard from "../../../UI/BaseCard/BaseCard";
 import BurgerModal from "../../../UI/BurgerModal/BurgerModal";
+import BurgerSaveButton from "../../../UI/BurgerSaveButton/BurgerSaveButton";
 
 import "./AnalysisResult.css";
 
@@ -140,6 +141,7 @@ const AnalysisResult = (props) => {
               <span>{props.name}</span>
             </div>
           </div>
+          <BurgerSaveButton />
         </BaseCard>
       </li>
       <BurgerModal
