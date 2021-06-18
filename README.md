@@ -14,13 +14,13 @@
       - [x] 비밀번호 재설정 테스트.
       - [x] 각 재료 클릭시 제거(& 추가) 기능.
       - [x] burger-analyzed 페이지에 로그인 관련된 문구 추가하기.
-      - [ ] error-modal 필요한 곳에 모두 적용.
+      - [x] error-modal 필요한 곳에 모두 적용.
       - [x] error-message 한글로 표기.
       - [x] 가입 성공 메시지 출력.
       - [x] route guard 만들기.
       - [x] UserProfile 리팩토링.
       - [x] 크레딧 페이지 만들기.
-      - [ ] 스타일링.
+      - [x] 스타일링.
         - [x] 네비게이션
         - [x] 버거
         - [x] 버거-analyzed
@@ -29,3 +29,5 @@
         - [x] 홈
         - [x] 크레딧
       - [ ] 유저와 유저가 만든 버거 연결.
+        - [x] my burger에 버튼 추가
+        - [x] ~~analysis-result에 버튼 추가~~

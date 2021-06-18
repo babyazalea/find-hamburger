@@ -6,7 +6,7 @@
   border: none;
   box-shadow: none;
   font-size: 1rem;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.2);
   transition: color 0.1s ease;
 }
 

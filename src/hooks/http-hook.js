@@ -8,6 +8,7 @@ export const useHttp = () => {
 
   const initializeError = () => {
     setError(null);
+    setIsLoading(false);
   };
 
   const sendRequest = async (url, sendingData) => {
@@ -20,10 +21,14 @@ export const useHttp = () => {
       setIsLoading(false);
 
       return responseData;
-    } catch (error) {
-      const errorResponse = error.response.data;
+    } catch (err) {
+      if (err.response) {
+        const errorResponse = err.response.data;
+        setError(errorResponse.error.message);
+      } else {
+        setError("알 수 없는 오류가 발생했습니다. 다시 시도해주세요.");
+      }
       setIsLoading(false);
-      setError(errorResponse.error.message);
     }
   };
 

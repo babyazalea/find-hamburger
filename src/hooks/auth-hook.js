@@ -55,7 +55,6 @@ export const useAuth = () => {
       if (expDate <= new Date()) {
         logout();
       } else {
-        console.log(parsingData.photoUrl);
         setIdToken(parsingData.idToken);
         setUserName(parsingData.displayName);
         setUserEmail(parsingData.email);

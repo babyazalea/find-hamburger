@@ -6,7 +6,7 @@ import { useBurger } from "../../hooks/burger-hooks";
 import BurgerAnalyzer from "./BurgerAnalyzer/BurgerAnalyzer";
 import BurgerMaker from "./BurgerMaker/BurgerMaker";
 
-const Burger = () => {
+const Burger = (props) => {
   const {
     ingredients,
     isAnalyzed,
@@ -33,7 +33,11 @@ const Burger = () => {
           />
         </Route>
         <Route path={`${path}/analyzed`}>
-          <BurgerAnalyzer ingredients={ingredients} isAnalyzed={isAnalyzed} />
+          <BurgerAnalyzer
+            userId={props.userId}
+            ingredients={ingredients}
+            isAnalyzed={isAnalyzed}
+          />
         </Route>
       </Switch>
     </div>

@@ -5,3 +5,22 @@
   text-align: center;
   cursor: pointer;
 }
+
+.my__burger .loading__dots {
+  margin: 50px auto 20px;
+}
+
+.burger__emoji {
+  margin-top: 0;
+}
+
+.my__burger-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.my__burger-name > *:not(:last-child) {
+  margin-right: 10px;
+}
