@@ -30,6 +30,10 @@
   justify-content: center;
 }
 
+.result__board > *:not(:last-child) {
+  margin-bottom: 50px;
+}
+
 .result__board ul {
   width: 400px;
   display: flex;
@@ -39,10 +43,18 @@
   padding-inline-start: 0;
   margin-bottom: 0;
   list-style: none;
-  margin-top: 50px;
 }
 
 .result__board ul li {
   display: flex;
   align-items: center;
+}
+
+.result__board ul li .base-card {
+  transition: all 0.08s linear;
+}
+
+.result__board ul li .base-card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.4);
 }

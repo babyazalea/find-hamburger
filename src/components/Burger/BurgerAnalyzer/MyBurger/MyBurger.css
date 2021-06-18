@@ -4,6 +4,12 @@
   background-color: #f2edeb;
   text-align: center;
   cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+.my__burger:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .my__burger .loading__dots {
