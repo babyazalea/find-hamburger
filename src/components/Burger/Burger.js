@@ -32,7 +32,7 @@ const Burger = (props) => {
             initBurger={initBurger}
           />
         </Route>
-        <Route path={`${path}/analyzed`}>
+        <Route path={`${path}/analyzed`} exact>
           <BurgerAnalyzer
             userId={props.userId}
             ingredients={ingredients}

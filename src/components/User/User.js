@@ -22,7 +22,7 @@ const User = (props) => {
           />
         </Route>
         <Route path={`${path}/user-burgers`}>
-          <UserBurgers />
+          <UserBurgers userId={props.userId} idToken={props.idToken} />
         </Route>
         <Route path={`${path}/reset-password`}>
           <ResetPassword notLoggedIn={false} userEmail={props.userEmail} />
