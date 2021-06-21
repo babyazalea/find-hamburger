@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import axios from "axios";
 
@@ -11,7 +11,7 @@ export const useHttp = () => {
     setIsLoading(false);
   };
 
-  const sendRequest = async (url, sendingData) => {
+  const sendPostRequest = async (url, sendingData) => {
     setIsLoading(true);
 
     try {
@@ -32,5 +32,27 @@ export const useHttp = () => {
     }
   };
 
-  return { isLoading, error, initializeError, sendRequest };
+  const sendGetRequest = useCallback(async (url, sendingData) => {
+    setIsLoading(true);
+
+    try {
+      const response = await axios.get(url);
+      const responseData = await response.data;
+
+      setIsLoading(false);
+
+      return responseData;
+    } catch (err) {
+      if (err.response) {
+        const errorResponse = err.response.data;
+        // setError(errorResponse.error.message);
+        console.log(errorResponse);
+      } else {
+        setError("알 수 없는 오류가 발생했습니다. 다시 시도해주세요.");
+      }
+      setIsLoading(false);
+    }
+  }, []);
+
+  return { isLoading, error, initializeError, sendPostRequest, sendGetRequest };
 };

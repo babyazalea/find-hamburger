@@ -12,7 +12,7 @@ const ResetPassword = (props) => {
   const [userEmail, setUserEmail] = useState(null);
   const [sendedResetPassword, setSendedResetPassword] = useState(false);
 
-  const { isLoading, error, initializeError, sendRequest } = useHttp();
+  const { isLoading, error, initializeError, sendPostRequest } = useHttp();
 
   const history = useHistory();
 
@@ -36,7 +36,7 @@ const ResetPassword = (props) => {
     };
 
     try {
-      await sendRequest(url, sendingData);
+      await sendPostRequest(url, sendingData);
       setSendedResetPassword(true);
     } catch (err) {
       console.log(err);

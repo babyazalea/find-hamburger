@@ -12,7 +12,7 @@ const AuthController = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { isLoading, error, initializeError, sendRequest } = useHttp();
+  const { isLoading, error, initializeError, sendPostRequest } = useHttp();
 
   const onChange = (event) => {
     const {
@@ -40,10 +40,10 @@ const AuthController = (props) => {
     };
 
     try {
-      const responseData = await sendRequest(loginUrl, loginData);
+      const responseData = await sendPostRequest(loginUrl, loginData);
 
       const token = { idToken: responseData["idToken"] };
-      const userDataResponse = await sendRequest(getUserDataUrl, token);
+      const userDataResponse = await sendPostRequest(getUserDataUrl, token);
       const userData = await userDataResponse.users[0];
 
       props.login(responseData, userData);

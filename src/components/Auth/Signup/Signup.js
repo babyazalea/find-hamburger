@@ -15,7 +15,7 @@ const Signup = () => {
   const [passwordError, setPassowordError] = useState(true);
   const [signed, setSigned] = useState(false);
 
-  const { isLoading, error, initializeError, sendRequest } = useHttp();
+  const { isLoading, error, initializeError, sendPostRequest } = useHttp();
 
   useEffect(() => {
     if (
@@ -56,7 +56,7 @@ const Signup = () => {
 
     if (password === confirmPassword) {
       try {
-        await sendRequest(url, signupData);
+        await sendPostRequest(url, signupData);
 
         setSigned(true);
       } catch (err) {
