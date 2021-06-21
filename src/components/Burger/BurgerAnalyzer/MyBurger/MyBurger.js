@@ -16,7 +16,7 @@ const MyBurger = (props) => {
   const [modalState, setModalState] = useState(false);
   const [saveMode, setSaveMode] = useState(false);
 
-  const { isLoading, error, initializeError, sendRequest } = useHttp();
+  const { isLoading, error, initializeError, sendPostRequest } = useHttp();
 
   const showModal = () => {
     setModalState(true);
@@ -51,10 +51,11 @@ const MyBurger = (props) => {
       userBurgerName: burgerName,
       userId: props.userId,
       ingredients: props.ingredients,
+      createdAt: Date.now(),
     };
 
     try {
-      const responseData = await sendRequest(url, data);
+      const responseData = await sendPostRequest(url, data);
       if (responseData.name) {
         setMyBurgerName(burgerName);
         setSaveMode(false);
