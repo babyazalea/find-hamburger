@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../../context/auth-context";
 
@@ -23,7 +24,7 @@ const BurgerAnalyzer = (props) => {
 
   if (scoreBoard) {
     sortedScoreBoard = scoreBoard
-      .sort(function (a, b) {
+      .sort((a, b) => {
         if (a.score > b.score) {
           return -1;
         }
@@ -68,6 +69,15 @@ const BurgerAnalyzer = (props) => {
         <div className="result__board">
           <MyBurger userId={props.userId} ingredients={props.ingredients} />
           <ul>{analyzer}</ul>
+          <Link
+            className="go-to-maker"
+            to={`/users/${props.userId}/user-burgers`}
+          >
+            <button>
+              <span>저장한 버거 보러 가기</span>
+              <i className="fas fa-arrow-circle-right" />
+            </button>
+          </Link>
         </div>
       ) : (
         <LoadingDots />
