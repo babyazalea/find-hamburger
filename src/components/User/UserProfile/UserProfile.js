@@ -22,7 +22,7 @@ const UserProfile = (props) => {
 
   const authContext = useContext(AuthContext);
 
-  const { isLoading, error, initializeError, sendRequest } = useHttp();
+  const { isLoading, error, initializeError, sendPostRequest } = useHttp();
 
   const { url } = useRouteMatch();
 
@@ -55,7 +55,7 @@ const UserProfile = (props) => {
     };
 
     try {
-      await sendRequest(url, verifingData);
+      await sendPostRequest(url, verifingData);
       setSendedVerification(true);
     } catch (err) {
       console.log(err);
@@ -74,7 +74,7 @@ const UserProfile = (props) => {
     };
 
     try {
-      const responseData = await sendRequest(url, dataForUpdate);
+      const responseData = await sendPostRequest(url, dataForUpdate);
       props.updateProfile(responseData);
     } catch (err) {
       console.log(err);
