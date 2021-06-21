@@ -10,7 +10,7 @@ import "./DeleteAccount.css";
 
 const DeleteAccount = (props) => {
   const [enteredEmail, setEnteredEmail] = useState(null);
-  const { isLoading, error, initializeError, sendRequest } = useHttp();
+  const { isLoading, error, initializeError, sendPostRequest } = useHttp();
 
   const history = useHistory();
 
@@ -33,7 +33,7 @@ const DeleteAccount = (props) => {
       idToken: props.idToken,
     };
     try {
-      await sendRequest(url, data);
+      await sendPostRequest(url, data);
       props.logout();
     } catch (err) {}
   };
