@@ -40,6 +40,7 @@ const App = () => {
         <Route path="/users/:userId">
           <User
             idToken={idToken}
+            userId={userId}
             userName={userName}
             userEmail={userEmail}
             photoUrl={photoUrl}
