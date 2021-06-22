@@ -77,10 +77,10 @@ const AuthController = (props) => {
                   name="password"
                   onChange={(event) => onChange(event)}
                 />
-                <button className="login__button" onClick={onLogin}>
-                  로그인
-                </button>
               </div>
+              <button className="login__button" onClick={onLogin}>
+                로그인
+              </button>
             </form>
             <div className="auth__control">
               <Link to="/auth/signup">
