@@ -2,7 +2,7 @@
 
   ><h3>원하는 조합의 버거를 만들면, 비슷한 조합의 햄버거를 찾습니다.
 
-<br>
+<br/>
 
 * 'burger-finder'의 re-building 버전.
 * routing & code-spilitting
@@ -32,3 +32,12 @@
       - [x] 유저와 유저가 만든 버거 연결.
         - [x] my burger에 버튼 추가
         - [x] ~~analysis-result에 버튼 추가~~
+      - [x] firebase hosting test 완료
+
+
+<br/>
+
+* 2021/06/22 90% 진행, 남은 task
+  - [ ] data read & write 권한 주기.
+  - [ ] 버거 데이터 하루에 하나씩 추가.
+    - [ ] 추가한 개수: 0
