@@ -1,0 +1,36 @@
+.sorting__mode-controller {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  height: 20%;
+}
+
+.sorting__mode-controller select {
+  grid-row: 3;
+}
+
+.saved__burger-list {
+  min-width: 350px;
+  width: 40%;
+  height: 70%;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  scrollbar-width: none;
+  box-sizing: border-box;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  margin-bottom: 70px;
+}
+
+.saved__burger-list ul {
+  width: 90%;
+  height: 90%;
+}
+
+.saved__burger-list ul li {
+  width: 100%;
+}
+
+.saved__burger-list ul li:not(:last-child) {
+  margin-bottom: 20px;
+}

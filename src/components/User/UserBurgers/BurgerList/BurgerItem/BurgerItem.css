@@ -1,0 +1,14 @@
+.saved__burger {
+  font-family: "Poor Story";
+  cursor: pointer;
+}
+
+.saved__burger .base-card {
+  padding: 0.5rem;
+  transition: all 0.1s linear;
+}
+
+.saved__burger .base-card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}

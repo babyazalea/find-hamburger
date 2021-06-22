@@ -28,6 +28,7 @@
         - [x] Auth
         - [x] 홈
         - [x] 크레딧
-      - [ ] 유저와 유저가 만든 버거 연결.
+        - [x] user-burger
+      - [x] 유저와 유저가 만든 버거 연결.
         - [x] my burger에 버튼 추가
         - [x] ~~analysis-result에 버튼 추가~~
