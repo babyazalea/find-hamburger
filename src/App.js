@@ -31,7 +31,7 @@ const App = () => {
         <Home />
       </Route>
       <Route path="/burger-maker">
-        <Burger userId={userId} />
+        <Burger userId={userId} idToken={idToken} />
       </Route>
       <Route path="/credits" exact>
         <Credits />

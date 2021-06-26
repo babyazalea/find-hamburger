@@ -67,7 +67,11 @@ const BurgerAnalyzer = (props) => {
       )}
       {scoreBoard ? (
         <div className="result__board">
-          <MyBurger userId={props.userId} ingredients={props.ingredients} />
+          <MyBurger
+            userId={props.userId}
+            idToken={props.idToken}
+            ingredients={props.ingredients}
+          />
           <ul>{analyzer}</ul>
           <Link
             className="go-to-maker"

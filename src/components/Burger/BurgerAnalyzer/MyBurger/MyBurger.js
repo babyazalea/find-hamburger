@@ -45,7 +45,7 @@ const MyBurger = (props) => {
 
   const saveBurger = async (event, burgerName) => {
     event.stopPropagation();
-    const url = `https://burger-finder-6bddb-default-rtdb.firebaseio.com/burgers.json`;
+    const url = `https://burger-finder-6bddb-default-rtdb.firebaseio.com/burgers.json?auth=${props.idToken}`;
 
     const data = {
       userBurgerName: burgerName,

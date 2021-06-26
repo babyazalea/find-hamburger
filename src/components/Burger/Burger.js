@@ -35,6 +35,7 @@ const Burger = (props) => {
         <Route path={`${path}/analyzed`} exact>
           <BurgerAnalyzer
             userId={props.userId}
+            idToken={props.idToken}
             ingredients={ingredients}
             isAnalyzed={isAnalyzed}
           />

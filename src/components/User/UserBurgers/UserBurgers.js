@@ -16,7 +16,12 @@ const UserBurgers = (props) => {
     const fetchingBurgers = async () => {
       const url =
         "https://burger-finder-6bddb-default-rtdb.firebaseio.com/burgers.json";
-      const queryParams = '?orderBy="userId"&equalTo="' + props.userId + '"';
+      const queryParams =
+        "?auth=" +
+        props.idToken +
+        '&orderBy="userId"&equalTo="' +
+        props.userId +
+        '"';
 
       try {
         const responseData = await sendGetRequest(url + queryParams);
@@ -40,7 +45,7 @@ const UserBurgers = (props) => {
     };
 
     fetchingBurgers();
-  }, [sendGetRequest, props.userId]);
+  }, [sendGetRequest, props.userId, props.idToken]);
 
   const confirmError = () => {
     initializeError();
