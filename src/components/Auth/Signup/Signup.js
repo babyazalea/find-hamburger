@@ -56,12 +56,12 @@ const Signup = () => {
 
     if (password === confirmPassword) {
       try {
-        await sendPostRequest(url, signupData);
+        const responseData = await sendPostRequest(url, signupData);
 
-        setSigned(true);
-      } catch (err) {
-        console.log(err);
-      }
+        if (responseData.idToken) {
+          setSigned(true);
+        }
+      } catch (err) {}
     } else {
     }
   };

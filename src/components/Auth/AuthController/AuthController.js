@@ -47,9 +47,7 @@ const AuthController = (props) => {
       const userData = await userDataResponse.users[0];
 
       props.login(responseData, userData);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   const confirmError = () => {

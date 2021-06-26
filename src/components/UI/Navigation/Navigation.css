@@ -8,10 +8,59 @@ nav {
   font-family: "Poor Story";
 }
 
+@media (min-width: 768px) {
+  .responsive__full {
+    display: block;
+  }
+  .responsive__small {
+    display: none;
+  }
+  .menus ul li:not(:last-child) {
+    margin-right: 15px;
+  }
+  .user__navs ul li:not(:last-child) {
+    margin-right: 15px;
+  }
+  .user__navs ul li:last-child {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    grid-template-columns: 1.4fr 3fr 2fr;
+  }
+  .responsive__full {
+    display: none;
+  }
+  .responsive__small {
+    display: block;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .menus ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+  .user__navs ul {
+    justify-content: center;
+    align-items: center;
+  }
+  .logout__btn .responsive__small {
+    margin-right: 0;
+  }
+  .user__navs ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+  .user__navs ul li:last-child {
+    margin-right: 15px;
+  }
+}
+
 .doorknob {
-  font-size: 1.16rem;
+  font-size: 1.15rem;
   font-weight: bold;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav li {
@@ -27,24 +76,12 @@ nav li:hover {
   display: flex;
 }
 
-.menus ul li:not(:last-child) {
-  margin-right: 15px;
-}
-
 .user__navs {
   justify-self: flex-end;
 }
 
 .user__navs ul {
   display: flex;
-}
-
-.user__navs ul li:not(:last-child) {
-  margin-right: 15px;
-}
-
-.user__navs ul li:last-child {
-  margin-right: 30px;
 }
 
 .user-name__display {

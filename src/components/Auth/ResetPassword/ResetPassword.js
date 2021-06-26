@@ -38,9 +38,7 @@ const ResetPassword = (props) => {
     try {
       await sendPostRequest(url, sendingData);
       setSendedResetPassword(true);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   const confirmError = () => {

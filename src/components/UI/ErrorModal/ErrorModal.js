@@ -64,7 +64,9 @@ const ErrorModal = (props) => {
         </div>
         <div className="error__modal-backdrop" onClick={closeModal}>
           <button className="error__modal-close-button" onClick={closeModal}>
-            <span>❌</span>
+            <span>
+              <i className="fas fa-times" />
+            </span>
           </button>
         </div>
       </div>,

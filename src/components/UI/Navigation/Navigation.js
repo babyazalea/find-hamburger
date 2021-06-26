@@ -11,15 +11,30 @@ const Navigation = (props) => {
   return (
     <nav>
       <div className="doorknob">
-        <Link to="/">햄버거 찾기</Link>
+        <Link to="/">
+          <span className="responsive__full">햄버거 찾기</span>
+          <span className="responsive__small">
+            <i className="fas fa-hamburger"></i>
+          </span>
+        </Link>
       </div>
       <div className="menus">
         <ul>
           <li>
-            <Link to="/burger-maker">햄버거 만들기</Link>
+            <Link to="/burger-maker">
+              <span className="responsive__full">햄버거 만들기</span>
+              <span className="responsive__small">
+                <i className="fas fa-plus"></i>
+              </span>
+            </Link>
           </li>
           <li>
-            <Link to="/credits">크레딧</Link>
+            <Link to="/credits">
+              <span className="responsive__full">크레딧</span>
+              <span className="responsive__small">
+                <i className="fas fa-exclamation-circle"></i>
+              </span>
+            </Link>
           </li>
         </ul>
       </div>
@@ -45,7 +60,10 @@ const Navigation = (props) => {
               </li>
               <li>
                 <button className="logout__btn" onClick={props.logout}>
-                  로그아웃
+                  <span className="responsive__full">로그아웃</span>
+                  <span className="responsive__small">
+                    <i className="fas fa-sign-out-alt"></i>
+                  </span>
                 </button>
               </li>
             </React.Fragment>

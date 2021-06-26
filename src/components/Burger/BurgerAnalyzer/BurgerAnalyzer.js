@@ -73,15 +73,25 @@ const BurgerAnalyzer = (props) => {
             ingredients={props.ingredients}
           />
           <ul>{analyzer}</ul>
-          <Link
-            className="go-to-maker"
-            to={`/users/${props.userId}/user-burgers`}
-          >
-            <button>
-              <span>저장한 버거 보러 가기</span>
-              <i className="fas fa-arrow-circle-right" />
-            </button>
-          </Link>
+          <div className="after__analyzing-buttons">
+            {authContext.isLoggedIn && authContext.isVerified && (
+              <Link
+                className="go-to-maker go-to-saved-burger"
+                to={`/users/${props.userId}/user-burgers`}
+              >
+                <button>
+                  <span>저장한 버거 보러 가기</span>
+                  <i className="fas fa-arrow-circle-right" />
+                </button>
+              </Link>
+            )}
+            <Link className="go-to-maker" to="/burger-maker">
+              <button>
+                <span>다시 만들기</span>
+                <i className="fas fa-arrow-circle-right" />
+              </button>
+            </Link>
+          </div>
         </div>
       ) : (
         <LoadingDots />

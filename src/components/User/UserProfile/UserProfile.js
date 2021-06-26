@@ -57,9 +57,7 @@ const UserProfile = (props) => {
     try {
       await sendPostRequest(url, verifingData);
       setSendedVerification(true);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   const changeName = async () => {
@@ -76,9 +74,7 @@ const UserProfile = (props) => {
     try {
       const responseData = await sendPostRequest(url, dataForUpdate);
       props.updateProfile(responseData);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   const confirmError = () => {

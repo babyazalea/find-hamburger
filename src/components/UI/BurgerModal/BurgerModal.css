@@ -1,3 +1,15 @@
+@media (min-width: 401px) {
+  .burger__modal-inside-base-card {
+    width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .burger__modal-inside-base-card {
+    width: 350px;
+  }
+}
+
 .burger__modal-wrapper {
   width: 100%;
   height: 100%;
@@ -24,7 +36,6 @@
 }
 
 .burger__modal-inside-base-card {
-  width: 400px;
   height: 250px;
   min-width: 350px;
   min-height: 180px;

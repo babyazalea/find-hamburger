@@ -8,10 +8,28 @@
   font-family: "Poor Story";
 }
 
+@media (min-width: 401px) {
+  .burger__anlyzer-guide {
+    max-width: 350px;
+    top: 35px;
+  }
+  .result__board ul {
+    width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .burger__anlyzer-guide {
+    max-width: 300px;
+    top: 10px;
+  }
+  .result__board ul {
+    width: 350px;
+  }
+}
+
 .burger__anlyzer-guide {
   position: absolute;
-  max-width: 350px;
-  top: 35px;
   color: rgba(0, 0, 0, 0.3);
 }
 .burger__anlyzer-guide p {
@@ -35,7 +53,6 @@
 }
 
 .result__board ul {
-  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,4 +74,12 @@
 .result__board ul li .base-card:hover {
   transform: translate(-1px, -1px);
   box-shadow: 0 5px 13px rgba(0, 0, 0, 0.4);
+}
+
+.after__analyzing-buttons {
+  display: flex;
+}
+
+.go-to-saved-burger {
+  margin-right: 20px;
 }
