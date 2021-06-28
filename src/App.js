@@ -16,7 +16,6 @@ const App = () => {
     idToken,
     userName,
     userEmail,
-    photoUrl,
     userId,
     isLoggedIn,
     isVerified,
@@ -43,7 +42,6 @@ const App = () => {
             userId={userId}
             userName={userName}
             userEmail={userEmail}
-            photoUrl={photoUrl}
             updateProfile={updateProfile}
             logout={logout}
           />
@@ -61,12 +59,7 @@ const App = () => {
       <AuthContext.Provider
         value={{ isLoggedIn: isLoggedIn, isVerified: isVerified }}
       >
-        <Layout
-          userName={userName}
-          userId={userId}
-          photoUrl={photoUrl}
-          logout={logout}
-        >
+        <Layout userName={userName} userId={userId} logout={logout}>
           {routes}
         </Layout>
       </AuthContext.Provider>
