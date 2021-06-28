@@ -14,11 +14,7 @@ const UserInfo = (props) => {
       props.userName !== null ? (
         <div className="user__info">
           <div className="user__image">
-            {props.photoUrl !== null ? (
-              <img src={props.photoUrl} alt="profile" />
-            ) : (
-              <i className="fas fa-user-circle"></i>
-            )}
+            <i className="fas fa-user-circle"></i>
           </div>
           <div>
             <span className="user__email">{props.userEmail}</span>

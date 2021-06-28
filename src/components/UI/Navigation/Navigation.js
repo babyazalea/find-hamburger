@@ -45,11 +45,7 @@ const Navigation = (props) => {
               <li>
                 <Link to={`/users/${props.userId}`}>
                   <div className="user-name__display">
-                    {props.photoUrl !== null ? (
-                      <img src={props.photoUrl} alt="유저 사진" />
-                    ) : (
-                      <i className="fas fa-user-circle"></i>
-                    )}
+                    <i className="fas fa-user-circle" />
                     {props.userName !== "" ? (
                       <span>{props.userName}</span>
                     ) : (

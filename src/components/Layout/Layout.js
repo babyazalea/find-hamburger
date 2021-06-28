@@ -9,7 +9,6 @@ const Layout = (props) => {
         <Navigation
           userName={props.userName}
           userId={props.userId}
-          photoUrl={props.photoUrl}
           logout={props.logout}
         />
       </header>

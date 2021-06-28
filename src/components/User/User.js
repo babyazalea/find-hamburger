@@ -16,7 +16,6 @@ const User = (props) => {
           <UserProfile
             userEmail={props.userEmail}
             userName={props.userName}
-            photoUrl={props.photoUrl}
             idToken={props.idToken}
             updateProfile={props.updateProfile}
           />
