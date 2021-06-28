@@ -7,7 +7,6 @@ export const useAuth = () => {
   const [idToken, setIdToken] = useState(null);
   const [userName, setUserName] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
-  const [photoUrl, setPhotoUrl] = useState(null);
   const [userId, setUserId] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
@@ -21,7 +20,6 @@ export const useAuth = () => {
     setIdToken(loginData["idToken"]);
     setUserName(loginData["displayName"]);
     setUserEmail(loginData["email"]);
-    setPhotoUrl(null);
     setUserId(loginData["localId"]);
     setIsVerified(userData["emailVerified"]);
     setIsLoggedIn(true);
@@ -30,10 +28,9 @@ export const useAuth = () => {
   };
 
   const updateProfile = (responseData) => {
-    storingData(responseData);
+    localStorage.setItem("displayName", responseData["displayName"]);
 
     setUserName(responseData["displayName"]);
-    setUserId(responseData["localId"]);
 
     history.push("/");
   };
@@ -46,23 +43,17 @@ export const useAuth = () => {
   }, [history]);
 
   useEffect(() => {
-    const storedData = localStorage.getItem("userData");
-    if (!storedData) {
+    const expDate = new Date(localStorage.getItem("expirationDate"));
+
+    if (!expDate || expDate <= new Date()) {
       logout();
     } else {
-      const parsingData = JSON.parse(storedData);
-      const expDate = new Date(parsingData.expirationDate);
-      if (expDate <= new Date()) {
-        logout();
-      } else {
-        setIdToken(parsingData.idToken);
-        setUserName(parsingData.displayName);
-        setUserEmail(parsingData.email);
-        setPhotoUrl(parsingData.photoUrl ? parsingData.photoUrl : null);
-        setUserId(parsingData.localId);
-        setIsVerified(parsingData.emailVerified);
-        setIsLoggedIn(true);
-      }
+      setIdToken(localStorage.getItem("idToken"));
+      setUserName(localStorage.getItem("displayName"));
+      setUserEmail(localStorage.getItem("email"));
+      setUserId(localStorage.getItem("localId"));
+      setIsVerified(localStorage.getItem("emailVerified"));
+      setIsLoggedIn(true);
     }
   }, [logout]);
 
@@ -71,7 +62,6 @@ export const useAuth = () => {
     userName,
     userEmail,
     userId,
-    photoUrl,
     isLoggedIn,
     isVerified,
     login,
