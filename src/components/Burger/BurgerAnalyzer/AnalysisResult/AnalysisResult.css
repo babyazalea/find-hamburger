@@ -111,15 +111,6 @@
   padding-left: 11%;
 }
 
-.subway-link {
-  background-image: url("../../../../assets/images/logos/subway_logo.png");
-  background-position: right 15% bottom 50%;
-  background-size: 25%;
-}
-.subway-link span {
-  padding-left: 18%;
-}
-
 .clicked {
   height: 300px;
 }
