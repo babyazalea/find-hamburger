@@ -1,5 +1,5 @@
 const initialIngredients = {
-  lidBun: 0,
+  lidBun: 1,
   lettuce: 0,
   pickle: 0,
   onion: 0,
@@ -18,7 +18,7 @@ const initialIngredients = {
   beefPatty: 0,
   shrimpPatty: 0,
   vegetablePatty: 0,
-  bottomBun: 0,
+  bottomBun: 1,
   realBurger: null,
 };
 
