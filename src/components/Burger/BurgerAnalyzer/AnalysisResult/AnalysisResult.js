@@ -96,9 +96,6 @@ const AnalysisResult = (props) => {
       case "shakeshack":
         brandNameKR = "셰이크쉑";
         break;
-      case "subway":
-        brandNameKR = "서브웨이";
-        break;
       default:
         brandNameKR = "브랜드";
         break;
