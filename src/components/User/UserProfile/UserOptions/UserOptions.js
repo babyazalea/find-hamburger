@@ -29,11 +29,11 @@ const UserOptions = (props) => {
     <div className="user-name__edit-btn">
       {props.nameEditing ? (
         <React.Fragment>
-          <button onClick={props.toggleEditMode}>수정 취소</button>
+          <button onClick={props.cancelNameEditing}>수정 취소</button>
           <button onClick={props.changeName}>이대로 수정</button>
         </React.Fragment>
       ) : (
-        <button onClick={props.toggleEditMode}>닉네임 수정</button>
+        <button onClick={props.activateNameEditing}>닉네임 수정</button>
       )}
     </div>
   ) : null;
