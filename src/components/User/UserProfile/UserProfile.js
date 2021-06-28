@@ -16,7 +16,6 @@ const UserProfile = (props) => {
   const [idToken, setIdToken] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
   const [userName, setUserName] = useState(null);
-  const [photoUrl, setPhotoUrl] = useState(null);
   const [nameEditing, setNameEditing] = useState(false);
   const [sendedVerification, setSendedVerification] = useState(false);
 
@@ -30,12 +29,16 @@ const UserProfile = (props) => {
     setIdToken(props.idToken);
     setUserEmail(props.userEmail);
     setUserName(props.userName !== "" ? props.userName : "이름 없음");
-    setPhotoUrl(props.photoUrl || null);
     setInfoLoading(false);
-  }, [props.idToken, props.userName, props.userEmail, props.photoUrl]);
+  }, [props.idToken, props.userName, props.userEmail]);
 
-  const toggleEditMode = () => {
-    setNameEditing(!nameEditing);
+  const activateNameEditing = () => {
+    setNameEditing(true);
+  };
+
+  const cancelNameEditing = () => {
+    setUserName(props.userName);
+    setNameEditing(false);
   };
 
   const userNameHandle = (event) => {
@@ -66,13 +69,13 @@ const UserProfile = (props) => {
     const dataForUpdate = {
       idToken: idToken,
       displayName: userName,
-      photoUrl: "",
       deleteAttribute: ["PHOTO_URL"],
       returnSecureToken: true,
     };
 
     try {
       const responseData = await sendPostRequest(url, dataForUpdate);
+
       props.updateProfile(responseData);
     } catch (err) {}
   };
@@ -91,7 +94,6 @@ const UserProfile = (props) => {
             <UserInfo
               userEmail={userEmail}
               userName={userName}
-              photoUrl={photoUrl}
               nameEditing={nameEditing}
               userNameHandle={userNameHandle}
             />
@@ -100,7 +102,8 @@ const UserProfile = (props) => {
                 sendedVerification={sendedVerification}
                 userEmail={userEmail}
                 emailVerification={emailVerification}
-                toggleEditMode={toggleEditMode}
+                activateNameEditing={activateNameEditing}
+                cancelNameEditing={cancelNameEditing}
                 nameEditing={nameEditing}
                 changeName={changeName}
               />
