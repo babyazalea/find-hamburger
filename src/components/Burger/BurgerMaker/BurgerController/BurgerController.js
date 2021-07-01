@@ -8,8 +8,8 @@ const BurgerController = (props) => {
   const [enteredText, setEnteredText] = useState("");
   const textInputElement = useRef(null);
 
-  const handleText = () => {
-    setEnteredText(textInputElement.current.value);
+  const textHandler = (event) => {
+    setEnteredText(event.target.value);
   };
 
   const convertingTextAndSubmit = (event, text) => {
@@ -20,6 +20,7 @@ const BurgerController = (props) => {
     if (convertedText === "") return;
 
     props.addIngredient(convertedText);
+    setEnteredText("");
   };
 
   const clearInput = () => {
@@ -46,8 +47,8 @@ const BurgerController = (props) => {
           <input
             type="text"
             name="ingredient"
-            ref={textInputElement}
-            onChange={handleText}
+            value={enteredText}
+            onChange={textHandler}
             autoFocus
           />
         </form>
