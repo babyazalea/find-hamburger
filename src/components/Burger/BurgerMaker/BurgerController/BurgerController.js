@@ -21,6 +21,7 @@ const BurgerController = (props) => {
 
     props.addIngredient(convertedText);
     setEnteredText("");
+    console.log("ok");
   };
 
   const clearInput = () => {
