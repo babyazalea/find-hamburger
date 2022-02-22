@@ -3,13 +3,14 @@
   >원하는 조합의 버거와 가장 비슷한 조합의 햄버거를 찾습니다.
 
 burger-finder는 React, Firebase 기반으로 만들어졌습니다. 원하는 재료를 입력해서 시중의 햄버거와 가장 비슷한 햄버거를 찾을 수 있습니다.
+<br>
 
 ## 사용하기
 
 Firebase를 통해서 호스팅되고 있습니다. 아래의 주소로 이동하시면 사용이 가능합니다.
 <br>
 [https://burger-finder-6bddb.firebaseapp.com/](https://burger-finder-6bddb.firebaseapp.com/)
-
+<br>
 
 ## 사용 예제
 
@@ -23,7 +24,7 @@ Firebase를 통해서 호스팅되고 있습니다. 아래의 주소로 이동�
 <br>
 <br>
 회원가입은 이메일과 비밀번호로 가능합니다. **이메일 주소를 인증하면 유저 정보 페이지에서 닉네임 변경, 비밀번호 변경이 가능합니다. 더이상 계정의 사용을 원하지 않으실 경우 '계정 삭제' 버튼을 누르시면 됩니다.**
-
+<br>
 
 ## 로컬 환경에서 테스트 하기
 
@@ -47,7 +48,7 @@ npm install
 ```env
 REACT_APP_FIREBASE_API_KEY=<YOUR_API_KEY>
 ```
-
+<br>
 
 ## 업데이트 내역
 
@@ -57,6 +58,7 @@ REACT_APP_FIREBASE_API_KEY=<YOUR_API_KEY>
   - Firebase로 호스팅
 * 2021-01
   - 프로젝트 준비
+<br>
 
 ## 만든 사람
 
