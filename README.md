@@ -1,58 +1,71 @@
 # 햄버거 찾기(burger-finder)
 
-  ><h3>원하는 조합의 버거를 만들면, 비슷한 조합의 햄버거를 찾습니다.
+  >원하는 조합의 버거를 만들면, 비슷한 조합의 햄버거를 찾습니다.
 
-<br/>
+<br>
+<br>
 
-* 'burger-finder'의 re-building 버전.
-* routing & code-spilitting
-  * burger-finder 작업 초기에 route를 통한 code-splitting을 하지 않아서, 뒤늣게 하려던 중에 계속 에러가 나서 기본적인 백엔드(firebase) 로직과 전체적인 구조를 그대로 가져와서 다시 만드는 중.
-  * 시작부터 라우트를 쪼개어 나눔.
-  * burger-finder는 dependency 문제로 에러가 많았음. 불필요한 package는 이번 버전에서 사용하지 않기로(react-bootstrap, fontawesome 등...).
-    
-    * 6월 5일까지 60% 정도 진행됐음
-      - [x] 비밀번호 재설정 테스트.
-      - [x] 각 재료 클릭시 제거(& 추가) 기능.
-      - [x] burger-analyzed 페이지에 로그인 관련된 문구 추가하기.
-      - [x] error-modal 필요한 곳에 모두 적용.
-      - [x] error-message 한글로 표기.
-      - [x] 가입 성공 메시지 출력.
-      - [x] route guard 만들기.
-      - [x] UserProfile 리팩토링.
-      - [x] 크레딧 페이지 만들기.
-      - [x] 스타일링.
-        - [x] 네비게이션
-        - [x] 버거
-        - [x] 버거-analyzed
-        - [x] 유저 프로필
-        - [x] Auth
-        - [x] 홈
-        - [x] 크레딧
-        - [x] user-burger
-      - [x] 유저와 유저가 만든 버거 연결.
-        - [x] my burger에 버튼 추가
-        - [x] ~~analysis-result에 버튼 추가~~
-      - [x] firebase hosting test 완료
+## 사용하기
 
+Firebase를 통해서 호스팅되고 있습니다. 아래의 주소로 이동하시면 사용이 가능합니다.
+<br>
+[https://burger-finder-6bddb.firebaseapp.com/](https://burger-finder-6bddb.firebaseapp.com/)
+<br>
+<br>
 
-<br/>
+## 사용 예제
 
-* 2021/06/22 90% 진행, 남은 task
-  - [x] data read & write 권한 주기.
-  - [x] 반응형 스타일링.
-  - [ ] 버거 데이터 하루에 하나씩 추가.
-    - [ ] 추가한 개수: 0
+![burger-finder-guide](./src/assets/images/find-hambuger__test-guide.gif)
 
+원하는 재료의 키워드('고기패티', '치즈', '양파' 등)을 입력하면 해당 키워드의 재료가 추가됩니다. 추가된 재료의 빼기와 더하기 버튼을 눌러 개수를 증감시킬 수 있습니다.
+<br>
+재료의 입력을 끝낸 후 '만들기' 버튼을 누르면, 입력한 재료의 구성과 가장 비슷한 햄버거를 찾습니다.
+<br>
+찾아낸 재료와 같은 햄버거는 '방금 만든 버거'로 생성되고 생성된 햄버거는 저장이 가능합니다. **저장 기능은 회원가입을 해야 이용할 수 있습니다.**
+<br>
+<br>
+회원가입은 이메일과 비밀번호로 가능합니다. **이메일 주소를 인증하면 유저 정보 페이지에서 닉네임 변경, 비밀번호 변경이 가능합니다. 더이상 계정의 사용을 원하지 않으실 경우 '계정 삭제' 버튼을 누르시면 됩니다.**
+<br>
+<br>
 
-<br/>
+## 로컬 환경에서 테스트 하기
 
-* 2021/06/29 첫 테스트.
-  - [ ] 배경색 다크.
-  - [x] 로그인 후, 새로고침하면 버거 저장이 되지 않음.(토큰이 어디서 유실되는지 파악 아직 안됌)
-    - user-name 변경시  변경 후 해당 api request의 response에 idToken이 담기지 않는 버그를 발견함. firebase의 공식 문서에선 해당 요청에 대해 idToken을 응답하도록 되어 있으나 실제 요청을 보내면, 3가지 항목이 제외된 상태로 응답을 받게 됌(idToken, refreshToken, expiresIn). 몇몇 로직 변경.
-  - [ ] 재료 입력할 때 더 다양한 단어 허용되도록 수정 필요.
-  - [ ] 어떤 재료 입력 가능한지 guide 필요.
-  - [ ] 입력한 재료가 등록된 재료가 아닐 경우, 메세지 출력.
-  - [ ] burger-analyzer에 새로운 가중치 추가(ex. 같은 패티일 경우 추가 점수).
-  - [ ] brand-logo 위치 조정(css-styling).
-  - [ ] 저장한 버거 삭제 기능 추가.
+### 요구사항:
+```json
+"node": ">=6.9.0"
+```
+
+### 의존성 설치:
+```sh
+yarn install
+
+(or)
+
+npm install
+```
+
+### 주의사항:
+로컬 환경에서 원활한 테스트를 위해서는 프로젝트의 루트 디렉토리에 `.env` 파일이 필요합니다. 해당 파일은, burger-finder에서 Firebase 시크릿 키를 저장한 파일입니다. 파일의 내용을 아래와 같이 구성하고, 테스트를 위해 준비한 Firebase의 시크릿 키를 입력합니다.
+
+```env
+REACT_APP_FIREBASE_API_KEY=<YOUR_API_KEY>
+```
+<br>
+<br>
+
+## 업데이트 내역
+
+* 2022-02 (예정)
+  - 재료 입력 방식 버튼식으로 변경
+* 2021-08
+  - Firebase로 호스팅
+* 2021-01
+  - 프로젝트 준비
+<br>
+<br>
+
+## 만든 사람
+
+Github: [tyange](https://github.com/tyange)
+<br>
+Email: [usun16@gmail.com](mailto:usun16@gmail.com)
