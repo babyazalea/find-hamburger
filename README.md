@@ -62,6 +62,8 @@ REACT_APP_FIREBASE_API_KEY=<YOUR_API_KEY>
   - Firebase로 호스팅
 * 2021-01
   - 프로젝트 준비
+
+[작업 일지 & Todos (Notion)](https://tyange.notion.site/burger-finder-React-8904ee3670bf48babdcce5dff52dc858)
 <br>
 <br>
 
