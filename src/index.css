@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
 
 @import url("../node_modules/@fortawesome/fontawesome-free/css/all.css");
 
@@ -100,4 +100,4 @@ button:disabled:hover {
 
 .go-to-maker button i {
   margin-left: 5px;
-} */
+}
